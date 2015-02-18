@@ -12,6 +12,7 @@ and open the template in the editor.
     <body>
         <?php include 'header.php';?>
         <div id="wrap">
+            <form name="eventadd" onsubmit="">
        <table id="addevent">
            <tr>
                <td>Title </td><td><input type="text" name="title" value="" /></td>
@@ -20,7 +21,7 @@ and open the template in the editor.
                <td>Location </td><td><input type="text" name="location" value="" /></td>
            </tr>
            <tr>
-               <td>Category </td><td><select>
+               <td>Category </td><td><select name="cat" id="">
                       <option value="cat1">category 1</option>
                       <option value="cat2">category 2</option>
                       <option value="cat3">category 3</option>
@@ -40,6 +41,7 @@ and open the template in the editor.
                <td> </td><td><button type="button" class="btn btn-primary">Submit</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" class="btn btn-primary">Cancel</button></td>
            </tr>
        </table>
+            </form>
             </div>
        <?php include 'footer.php';?>
     </body>
