@@ -28,3 +28,4 @@ h1 {color:blue; font-size:20px}
 b { color: navy }
 #search { float : right; margin-top: 50px; padding: 20px;}
 #search button{ margin-top: -10px}
+#asearch { width: 350px; clear: both; float: right; border: 2px solid white; color: white; background :  url(../graphics/menubg.jpg); display:none}

@@ -7,6 +7,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/reset.css" type="text/css" rel="stylesheet" />
     <link href="css/main.css" type="text/css" rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/search.js"></script>
    
     
 
@@ -27,7 +29,33 @@
             </div>
             <div id="search">
                 <input type="text" name="search" value="Search Here"  onfocus="if(this.value=='Search Here') {this.value='', this.style.color='#999'};" onblur="if(this.value=='') {this.value='Search Here', this.style.color='#555';}" />
-                <button type="button" name="search" value="Search Results" class="btn btn-primary">Search</button>
+                <button type="button" name="search" value="Search Results" class="btn btn-primary">Search</button><br />
+                <button type="button" name="asearch" id="flip" value="Advanced Search Results" class="btn btn-info">Adavnced Search</button>
+            </div>
+            <div id="asearch">
+                <form>
+                <table id="advanced">
+                    <tr>
+               <td>Title </td><td><input type="text" name="title" value="" /></td>
+           </tr>
+           <tr>
+               <td>Location </td><td><input type="text" name="location" value="" /></td>
+           </tr>
+                    <tr>
+               <td>Category </td><td><select name="cat" id="">
+                      <option value="cat1">category 1</option>
+                      <option value="cat2">category 2</option>
+                      <option value="cat3">category 3</option>
+                      <option value="cat4">category 4</option>
+                    </select>        </td>
+           </tr>
+                    <tr>
+               <td>Date </td><td><input type="text" name="date" value="" /></td>
+           </tr>
+                    <tr>
+               <td> </td><td><button type="button" name="submit" value="search Results" class="btn btn-success">Search</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" id="cancel" class="btn btn-success">Cancel</button></td>
+           </tr>
+                </table></form>
             </div>
             <div id="menu">
                     <ul>
