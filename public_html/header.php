@@ -28,7 +28,7 @@
 
             </div>
             <div id="search">
-                <input type="text" name="search" value="Search Here"  onfocus="if(this.value=='Search Here') {this.value='', this.style.color='#999'};" onblur="if(this.value=='') {this.value='Search Here', this.style.color='#555';}" />
+                <input type="text" name="search" value="By Event Title, Decription, Location"  onfocus="if(this.value=='By Event Title, Decription, Location') {this.value='', this.style.color='#999'};" onblur="if(this.value=='') {this.value='By Event Title, Decription, Location', this.style.color='#555';}" />
                 <button type="button" name="search" value="Search Results" class="btn btn-primary">Search</button><br />
                 <button type="button" name="asearch" id="flip" value="Advanced Search Results" class="btn btn-info">Adavnced Search</button>
             </div>
@@ -38,9 +38,7 @@
                     <tr>
                <td>Title </td><td><input type="text" name="title" value="" /></td>
            </tr>
-           <tr>
-               <td>Location </td><td><input type="text" name="location" value="" /></td>
-           </tr>
+           
                     <tr>
                <td>Category </td><td><select name="cat" id="">
                       <option value="cat1">category 1</option>
@@ -50,9 +48,14 @@
                     </select>        </td>
            </tr>
                     <tr>
-               <td>Date </td><td><input type="text" name="date" value="" /></td>
+               <td>Date </td><td>From <input type="date" name="sdate" value="" />To: <input type="date" name="edate" value="" /></td>
            </tr>
                     <tr>
+               <td>TIme </td><td>From <input type="time" name="stime" value="" />To: <input type="time" name="etime" value="" /></td>
+           </tr>
+
+                    <tr>
+
                <td> </td><td><button type="button" name="submit" value="search Results" class="btn btn-success">Search</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" id="cancel" class="btn btn-success">Cancel</button></td>
            </tr>
                 </table></form>
