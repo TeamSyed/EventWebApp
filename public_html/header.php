@@ -15,7 +15,7 @@
     <title>Rohit's WebSite</title>
 </head>
 <body ="MainCtrl">
-    <div id="wrap">
+   
         <div id="header">
             <div id="logo">
                 <img src="Graphics/logo.png" />
@@ -24,6 +24,10 @@
 
                 <img src="Graphics/banner.png" />
 
+            </div>
+            <div id="search">
+                <input type="text" name="search" value="Search Here"  onfocus="if(this.value=='Search Here') {this.value='', this.style.color='#999'};" onblur="if(this.value=='') {this.value='Search Here', this.style.color='#555';}" />
+                <button type="button" name="search" value="Search Results" class="btn btn-primary">Search</button>
             </div>
             <div id="menu">
                     <ul>
@@ -40,4 +44,4 @@
                 </div>
             </div>
             
-     </div>  
+       
