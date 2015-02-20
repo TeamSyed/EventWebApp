@@ -11,7 +11,9 @@
     <script src="js/search.js"></script>
    
     
-
+<?php 
+    include_once('config.php');
+?>
 
 
     <title>Rohit's WebSite</title>
