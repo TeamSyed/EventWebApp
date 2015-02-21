@@ -25,7 +25,11 @@ td{padding: 15px; width: 580px}
 text-align: center;
 clear:both;}
 h1 {color:blue; font-size:20px}
-b { color: navy }
+.middle { border: 1px solid grey; padding : 15px; margin : 15px; background : #222 ;color: white; height: 350px; }
+.middle img { height: 350px; width: 250px; float: left;clear:none; padding-right: 10px;}
+.middle h3 { color : green; margin-top: 90px;}
+#top h4{ Color: red; font:200; margin: 20px}
+
 table#addevent img {height: 150px; width : 150px; border: 1px solid black; padding: 2px;margin: 5px;}
 #search { float : right; margin-top: 50px; padding: 20px;}
 #search button{ margin-top: -10px}
