@@ -7,8 +7,9 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/reset.css" type="text/css" rel="stylesheet" />
     <link href="css/main.css" type="text/css" rel="stylesheet" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/validations.js"></script>
    
     
 <?php 

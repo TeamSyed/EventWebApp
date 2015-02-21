@@ -8,25 +8,25 @@
     <body>
         <?php include 'header.php';?>
         <div id="wrap">
-            <form name="eventadd" method="post" enctype="multipart/form-data">
+            <form name="eventadd" method="post" enctype="multipart/form-data" onsubmit="return validateEventAdd();">
        <table id="addevent">
            <tr>
-               <td>Title </td><td><input type="text" name="title" value="" placeholder="Enter Title"/></td>
+               <td>Title </td><td class="title"><input id="title" type="text" name="title" value="" placeholder="Enter Title"/><br /><div class="err"></div></td>
            </tr>
            <tr>
-               <td>Address </td><td><input type="text" name="address" value="" placeholder="Enter Address"/></td>
+               <td>Address </td><td class="address"><input id="address" type="text" name="address" value="" placeholder="Enter Address"/><br /><div class="err"></div></td>
            </tr>
            <tr>
-               <td>City </td><td><input type="text" name="city" value=""  placeholder="Enter City"/></td>
+               <td>City </td><td class="city"><input id="city" type="text" name="city" value=""  placeholder="Enter City"/><br /><div class="err"></div></td>
            </tr>
            <tr>
-               <td>Postal Code </td><td><input type="text" name="postal_code" value=""  placeholder="Enter Postal Code"/></td>
+               <td>Postal Code </td><td class="postal_code"><input id="postal_code" type="text" name="postal_code" value="" placeholder="Enter Postal Code"/><br /><div class="err"></div></td>
            </tr>
            <tr>
-               <td>Event Type </td><td><input type="radio" name="type" value="Public" /> Public&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="radio" name="type" value="Private" /> Private</td>
+               <td>Event Type </td><td><input type="radio" name="type" value="Public" checked="checked"/> Public&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="radio" name="type" value="Private" /> Private</td>
            </tr>
            <tr>
-               <td>Category </td><td><select name="cat" id="">
+               <td>Category </td><td class="category"><select name="cat" id="category">
                       <option value="">--Select Category--</option>
                       <option value="1">Cuisine</option>
                       <option value="2">Job Fair</option>
@@ -35,20 +35,20 @@
                       <option value="5">Concert</option>
                       <option value="6">Meeting</option>
                       <option value="7">Party</option>
-                    </select>        </td>
+                    </select>  <br /><div class="err"></div>      </td>
            </tr>
            <tr>
-               <td>Date </td><td><input type="date" name="date" value=""  placeholder="Enter Date of Event"/></td>
+               <td>Date </td><td class="date"><input type="date" name="date" id="date" value=""  placeholder="Enter Date of Event"/><br /><div class="err"></div></td>
            </tr>
            <tr>
-               <td>Time </td><td><input type="time" name="time" value=""  placeholder="Enter Time for Event"/></td>
+               <td>Time </td><td class="time"><input type="time" name="time" value="" id="time"  placeholder="Enter Time for Event"/><br /><div class="err"></div></td>
            </tr>
            <tr>
-               <td>Description </td><td><textarea name="description" rows="5" cols="40"  placeholder="Describe your event"></textarea></td>
+               <td>Description </td><td class="description"><textarea id="description" name="description" rows="5" cols="40"  placeholder="Describe your event"></textarea> <br /><div class="err"></div></td>
            </tr>
 
            <tr>
-               <td>Pictures </td><td>   <input type="file" name="image" id="image"><input type="submit" value="Upload Image" name="upload"> 
+               <td>Pictures </td><td class="image">   <input type="file" id="image" name="image" id="image"><input type="submit" value="Upload Image" name="upload"> <br /><div class="err"></div>
                     <?php
                     
 if (isset($_POST['upload'])){
@@ -82,7 +82,7 @@ if (isset($_POST['upload'])){
 ?></td>
            </tr>
            <tr>
-               <td> </td><td><button type="button" name="submit" value="Upload Image" class="btn btn-primary">Submit</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" class="btn btn-primary">Cancel</button></td>
+               <td> </td><td><button type="submit" name="submit" value="Upload Image" class="btn btn-primary">Submit</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" class="btn btn-primary">Cancel</button></td>
            </tr>
        </table>
             </form>
