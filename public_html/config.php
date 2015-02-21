@@ -112,4 +112,10 @@ error_reporting(E_ALL ^ E_DEPRECATED);
     if(!$default_cats_insert) echo "Error while inserting into ".$tbl_categories.": ".  mysql_error();
 
     // Query for advanced search
-    $adv_search = "SELECT title, description, address, city from ".$tbl_events." WHERE `title` LIKE '%$keyword%' AND `address` LIKE '%$keyword%' AND `city` LIKE '%$keyword%' AND `description` LIKE '%$keyword%'";
+    // $adv_search = "SELECT title, description, address, city from ".$tbl_events." WHERE `title` LIKE '%$keyword%' AND `address` LIKE '%$keyword%' AND `city` LIKE '%$keyword%' AND `description` LIKE '%$keyword%'";
+    
+    // Query to update the event data
+//    $cur_date = date("Y-m-d h:i:s", time());
+//    $query_update_event = "UPDATE TABLE `".$tbl_events."` set title='$title', category_id='$cat_id'"
+//            . "address='$address', city='$city', postal_code='$postal_code', date='$date', time='$time', "
+//            . "description='$description', updated_at='$cur_date' where id='$event_id'";
