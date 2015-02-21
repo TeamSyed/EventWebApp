@@ -8,33 +8,43 @@
     <body>
         <?php include 'header.php';?>
         <div id="wrap">
-            <form name="eventadd"  method="post" enctype="multipart/form-data">
+            <form name="eventadd" method="post" enctype="multipart/form-data">
        <table id="addevent">
            <tr>
-               <td>Title </td><td><input type="text" name="title" value="" /></td>
+               <td>Title </td><td><input type="text" name="title" value="" placeholder="Enter Title"/></td>
            </tr>
            <tr>
-               <td>Location </td><td><input type="text" name="location" value="" /></td>
+               <td>Address </td><td><input type="text" name="address" value="" placeholder="Enter Address"/></td>
+           </tr>
+           <tr>
+               <td>City </td><td><input type="text" name="city" value=""  placeholder="Enter City"/></td>
+           </tr>
+           <tr>
+               <td>Postal Code </td><td><input type="text" name="postal_code" value=""  placeholder="Enter Postal Code"/></td>
            </tr>
            <tr>
                <td>Event Type </td><td><input type="radio" name="type" value="Public" /> Public&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="radio" name="type" value="Private" /> Private</td>
            </tr>
            <tr>
                <td>Category </td><td><select name="cat" id="">
-                      <option value="cat1">category 1</option>
-                      <option value="cat2">category 2</option>
-                      <option value="cat3">category 3</option>
-                      <option value="cat4">category 4</option>
+                      <option value="">--Select Category--</option>
+                      <option value="1">Cuisine</option>
+                      <option value="2">Job Fair</option>
+                      <option value="3">Job Interview</option>
+                      <option value="4">Traffic Accident</option>
+                      <option value="5">Concert</option>
+                      <option value="6">Meeting</option>
+                      <option value="7">Party</option>
                     </select>        </td>
            </tr>
            <tr>
-               <td>Date </td><td><input type="text" name="date" value="" /></td>
+               <td>Date </td><td><input type="date" name="date" value=""  placeholder="Enter Date of Event"/></td>
            </tr>
            <tr>
-               <td>Time </td><td><input type="time" name="time" value="" /></td>
+               <td>Time </td><td><input type="time" name="time" value=""  placeholder="Enter Time for Event"/></td>
            </tr>
            <tr>
-               <td>Description </td><td><textarea name="description" rows="5" cols="40"></textarea></td>
+               <td>Description </td><td><textarea name="description" rows="5" cols="40"  placeholder="Describe your event"></textarea></td>
            </tr>
 
            <tr>
