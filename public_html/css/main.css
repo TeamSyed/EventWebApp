@@ -26,7 +26,7 @@ text-align: center;
 clear:both;}
 h1 {color:blue; font-size:20px}
 .middle { border: 1px solid grey; padding : 15px; margin : 15px; background : #222 ;color: white; height: 350px; }
-.middle img { height: 350px; width: 250px; float: left;clear:both; padding-right: 10px;}
+.middle img { height: 350px; width: 250px; float: left;clear:none; padding-right: 10px;}
 .middle h3 { color : green; margin-top: 90px;}
 #top h4{ Color: red; font:200; margin: 20px}
 
