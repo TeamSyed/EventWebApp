@@ -19,7 +19,7 @@
 
     <title>Rohit's WebSite</title>
 </head>
-<body ="MainCtrl">
+<body >
    
         <div id="header">
             <div id="logo">
