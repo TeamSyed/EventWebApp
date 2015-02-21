@@ -110,3 +110,6 @@ error_reporting(E_ALL ^ E_DEPRECATED);
                     ('Party', '');";
     $default_cats_insert = mysql_query($default_cats);
     if(!$default_cats_insert) echo "Error while inserting into ".$tbl_categories.": ".  mysql_error();
+
+    // Query for advanced search
+    $adv_search = "SELECT title, description, address, city from ".$tbl_events." WHERE `title` LIKE '%$keyword%' AND `address` LIKE '%$keyword%' AND `city` LIKE '%$keyword%' AND `description` LIKE '%$keyword%'";

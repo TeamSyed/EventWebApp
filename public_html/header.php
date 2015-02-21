@@ -31,7 +31,7 @@
 
             </div>
             <div id="search">
-                <input type="text" name="search" value="By Event Title, Decription, Location"  onfocus="if(this.value=='By Event Title, Decription, Location') {this.value='', this.style.color='#999'};" onblur="if(this.value=='') {this.value='By Event Title, Decription, Location', this.style.color='#555';}" />
+                <input type="text" name="search" value="By Event Title, Decription, Address, City"  onfocus="if(this.value=='By Event Title, Decription, Location') {this.value='', this.style.color='#999'};" onblur="if(this.value=='') {this.value='By Event Title, Decription, Location', this.style.color='#555';}" />
                 <button type="button" name="search" value="Search Results" class="btn btn-primary">Search</button><br />
                 <button type="button" name="asearch" id="flip" value="Advanced Search Results" class="btn btn-info">Adavnced Search</button>
             </div>
