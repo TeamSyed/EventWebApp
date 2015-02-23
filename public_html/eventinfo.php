@@ -33,13 +33,14 @@
                     <td>description</td>
                 </tr>
                 <tr>
-                    <td>User Comment</td>
-                    <td>comment</td>
-                </tr>
-                <tr>
                     <td>Picture</td>
                     <td>pic</td>
                 </tr>
+                <tr>
+                    <td>User Comment</td>
+                    <td>comment</td>
+                </tr>
+                
             </table>
         </td>
         <td><img src="uploads/download.jpg"></td>
