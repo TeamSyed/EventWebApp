@@ -32,6 +32,10 @@
                     <td>Event Description</td>
                     <td>description</td>
                 </tr>
+                <tr>
+                    <td>User Comment</td>
+                    <td>comment</td>
+                </tr>
             </table>
         </td>
         <td><img src="uploads/download.jpg"></td>
