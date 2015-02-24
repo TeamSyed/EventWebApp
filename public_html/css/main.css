@@ -9,7 +9,7 @@ html {height : 100%}
 #banner img { width : 300px}
 #banner { height : 100px; float: right; margin-top: -100px}
 #menu ul { overflow: hidden;  margin-left:320px; padding-left:100px}
-#menu ul li {float:left; padding-left:80px; margin-right: 35px; color: white}
+#menu ul li {float:left; padding-left:80px; /* margin-right: 35px; */ color: white}
 #list tr {float:left;  color: gray}
 #menu{ margin-left: -400px; margin-top: 60px; padding: 20px; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:16px}
 td{padding: 15px; width: 580px}

@@ -16,6 +16,17 @@
     <script src="js/search.js"></script>
     <script src="js/validations.js"></script>
    
+    <!-- STYLE EDITOR -->
+    <link href="styleeditor/prettify.css" rel="stylesheet">
+    <link href="styleeditor/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="styleeditor/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+    
+    <script src="styleeditor/jquery.hotkeys.js"></script>
+    
+    <script src="styleeditor/prettify.js"></script>
+    <link href="styleeditor/index.css" rel="stylesheet">
+    <script src="styleeditor/bootstrap-wysiwyg.js"></script>
     
 <?php 
     include_once('config.php');
@@ -74,6 +85,7 @@
                         <li id="event"><a href="newevent.php">Add an event</a></li>
                         <li id="Contact"><a href="#/about">About Us</a></li>
                         <li id="eventinfo"><a href="eventinfo.php">Event Information</a></li>
+                        <li id="businessevent"><a href="businessevent.php"> Business Event</a></li>
                         
                         
                     </ul>
