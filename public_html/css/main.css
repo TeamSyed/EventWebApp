@@ -9,7 +9,7 @@ html {height : 100%}
 #banner img { width : 300px}
 #banner { height : 100px; float: right; margin-top: -100px}
 #menu ul { overflow: hidden;  margin-left:320px; padding-left:100px}
-#menu ul li {float:left; padding-left:80px; /* margin-right: 35px; */ color: white}
+#menu ul li {float:left; padding-left:80px; margin-right: 35px; color: white}
 #list tr {float:left;  color: gray}
 #menu{ margin-left: -400px; margin-top: 60px; padding: 20px; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:16px}
 td{padding: 15px; width: 580px}
@@ -25,9 +25,9 @@ td{padding: 15px; width: 580px}
 text-align: center;
 clear:both;}
 h1 {color:blue; font-size:20px}
-.middle { border: 1px solid grey; padding : 15px; margin : 15px; background : #222 ;color: white; height: 350px; }
-.middle img { height: 350px; width: 250px; float: left;clear:none; padding-right: 10px;}
-.middle h3 { color : green; margin-top: 90px;}
+.middle { border: 1px solid grey; padding : 15px; margin : 15px; background : #222 ;color: white }
+
+table#thead  { color : green; font-size: 18px; font-weight:bold}
 #top h4{ Color: red; font:200; margin: 20px}
 
 table#addevent img {height: 150px; width : 150px; border: 1px solid black; padding: 2px;margin: 5px;}
