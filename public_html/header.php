@@ -5,9 +5,14 @@
     <meta charset="utf-8" />
 
     <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/datepicker.css" rel="stylesheet" />
+    <link href="css/timepicker.css" rel="stylesheet" />
     <link href="css/reset.css" type="text/css" rel="stylesheet" />
     <link href="css/main.css" type="text/css" rel="stylesheet" />
     <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/bootstrap-timepicker.min.js"></script>
     <script src="js/search.js"></script>
     <script src="js/validations.js"></script>
    
