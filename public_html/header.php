@@ -67,10 +67,10 @@
                     </select>        </td>
            </tr>
                     <tr>
-               <td>Date </td><td>From <input type="date" name="sdate" value="" />To: <input type="date" name="edate" value="" /></td>
+               <td>Date </td><td>From <input type="date" name="sdate" class="dateWidget" value="" id="date"/>To: <input id="date" class="dateWidget" type="date" name="edate" value="" /></td>
            </tr>
                     <tr>
-               <td>TIme </td><td>From <input type="time" name="stime" value="" />To: <input type="time" name="etime" value="" /></td>
+               <td>TIme </td><td>From <input type="time" name="stime" value="" class="timeWidget" id="time" />To: <input class="timeWidget" id="time" type="time" name="etime" value="" /></td>
            </tr>
 
                     <tr>

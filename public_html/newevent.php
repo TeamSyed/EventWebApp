@@ -38,10 +38,10 @@
                     </select>  <br /><div class="err"></div>      </td>
            </tr>
            <tr>
-               <td>Date </td><td class="date"><input type="date" name="date" id="date" value="" placeholder="Enter Date of Event"/><br /><div class="err"></div></td>
+               <td>Date </td><td class="date"><input  class="dateWidget" type="date" name="date" id="date" value="01/01/1970" placeholder="Enter Date of Event"/><br /><div class="err"></div></td>
            </tr>
            <tr>
-               <td>Time </td><td class="time"><input type="time" name="time" value="" id="time"  placeholder="Enter Time for Event"/><br /><div class="err"></div></td>
+               <td>Time </td><td class="time"><input  class="timeWidget" type="time" name="time" value="" id="time"  placeholder="Enter Time for Event"/><br /><div class="err"></div></td>
            </tr>
            <tr>
                <td>Description </td><td class="description"><textarea id="description" name="description" rows="5" cols="40"  placeholder="Describe your event"></textarea> <br /><div class="err"></div></td>
