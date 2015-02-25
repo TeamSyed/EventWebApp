@@ -20,6 +20,21 @@
            <tr>
                <td>City </td><td class="city"><input id="city" type="text" name="city" value=""  placeholder="Enter City"/><br /><div class="err"></div></td>
            </tr>
+            <tr>
+               <td>Province </td><td class="province"><select name="province" id="province">
+                      <option value="">--Select Province--</option>
+                      <option value="ON">Ontario</option>
+                      <option value="QT">Quebec</option>
+                      <option value="NS">Nova Scotia</option>
+                      <option value="NB">New Brunswick</option>
+                      <option value="MB">Manitoba</option>
+                      <option value="BC">British Columbia</option>
+                      <option value="PE">Prince Edward Island</option>
+                      <option value="SK">Saskatchewan</option>
+                      <option value="AB">Alberta</option>
+                      <option value="NL">Newfoundland and Labrador</option>
+                    </select>  <br /><div class="err"></div>      </td>
+           </tr>
            <tr>
                <td>Postal Code </td><td class="postal_code"><input id="postal_code" type="text" name="postal_code" value="" placeholder="Enter Postal Code"/><br /><div class="err"></div></td>
            </tr>

@@ -12,7 +12,7 @@
         }); 
     });
 function validateEventAdd(){
-    var ids = ['title', 'address', 'city', 'postal_code', 'category','image', 'description'];
+    var ids = ['title', 'address', 'city','province', 'postal_code', 'category','image', 'description'];
     var status = true;
     for(i=0;i<ids.length;i++){
         var idVal = $("#"+ids[i]).val();

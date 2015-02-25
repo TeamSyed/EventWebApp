@@ -29,6 +29,7 @@ error_reporting(E_ALL ^ E_DEPRECATED);
                         `category_id` int(11) NOT NULL,
                         `address` text NOT NULL,
                         `city` varchar(50) NOT NULL,
+                        `province` varchar(50) NOT NULL,
                         `postal_code` varchar(100) NOT NULL,
                         `type` varchar(100) NOT NULL,
                         `date` varchar(50) NOT NULL,
