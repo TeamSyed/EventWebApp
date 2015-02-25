@@ -25,7 +25,7 @@ td{padding: 15px; width: 580px}
 text-align: center;
 clear:both;}
 h1 {color:blue; font-size:20px}
-.middle { border: 1px solid grey; padding : 15px; margin : 15px; background : #222 ;color: white }
+input#searchbtn {margin-top: -12px;}
 
 table#thead  { color : green; font-size: 18px; font-weight:bold}
 #top h4{ Color: red; font:200; margin: 20px}

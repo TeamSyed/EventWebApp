@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html  xmlns="http://www.w3.org/1999/xhtml">
@@ -46,11 +47,12 @@
                 <img src="Graphics/banner.png" />
 
             </div>
-            <div id="search">
-                <input type="text" name="search" value="By Event Title, Decription, Address, City"  onfocus="if(this.value=='By Event Title, Decription, Location') {this.value='', this.style.color='#999'};" onblur="if(this.value=='') {this.value='By Event Title, Decription, Location', this.style.color='#555';}" />
-                <button type="button" name="search" value="Search Results" class="btn btn-primary">Search</button><br />
+           <form action="search.php" method="post"> 
+           <div id="search">
+                <input type="text" name="search" placeholder="By Event Title, Decription, Address, City"   />
+                <input id="searchbtn" type="submit" id="searchbtn" value="Search" name="search" class="btn btn-primary"/><br />
                 <button type="button" name="asearch" id="flip" value="Advanced Search Results" class="btn btn-info">Adavnced Search</button>
-            </div>
+            </div></form>
             <div id="asearch">
                 <form>
                 <table id="advanced">
