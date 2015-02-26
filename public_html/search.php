@@ -1,11 +1,4 @@
-<!DOCTYPE html>
 
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
         <?php include 'header.php';?>
         <div id="wrap">
             <div id="top">
@@ -22,8 +15,9 @@
                 $mysqli = new mysqli('localhost','root','','events');
                 
                 
+                
                 //query the database
-                $resultSet = $mysqli->query("SELECT * from  event");
+                $resultSet = $mysqli->query("SELECT * from  event ");
                 
                 
                 //count the returned rows
@@ -63,6 +57,4 @@
         </div>
         
        <?php include 'footer.php';?>
-    </body>
-   
-</html>
+    
