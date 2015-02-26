@@ -50,11 +50,11 @@
            <form action="search.php" method="post"> 
            <div id="search">
                 <input type="text" name="search" placeholder="By Event Title, Decription, Address, City"   />
-                <input id="searchbtn" type="submit" id="searchbtn" value="Search" name="search" class="btn btn-primary"/><br />
+                <input id="searchbtn" type="submit"  value="Search" name="search" class="btn btn-primary"/><br />
                 <button type="button" name="asearch" id="flip" value="Advanced Search Results" class="btn btn-info">Adavnced Search</button>
             </div></form>
             <div id="asearch">
-                <form>
+                <form action="search.php" method="post">
                 <table id="advanced">
                     <tr>
                <td>Title </td><td><input type="text" name="title" value="" /></td>
@@ -77,7 +77,7 @@
 
                     <tr>
 
-               <td> </td><td><button type="button" name="submit" value="search Results" class="btn btn-success">Search</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" id="cancel" class="btn btn-success">Cancel</button></td>
+               <td> </td><td><input  type="submit"  value="Search" name="search" class="btn btn-success"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" id="cancel" class="btn btn-success">Cancel</button></td>
            </tr>
                 </table></form>
             </div>
