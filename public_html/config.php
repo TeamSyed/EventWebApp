@@ -120,3 +120,7 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 //    $query_update_event = "UPDATE TABLE `".$tbl_events."` set title='$title', category_id='$cat_id'"
 //            . "address='$address', city='$city', postal_code='$postal_code', date='$date', time='$time', "
 //            . "description='$description', updated_at='$cur_date' where id='$event_id'";
+    
+//    Query for retrieving event information
+//    $retrieve_event = "SELECT * FROM event where id='$event_id'";   // Specific event
+//    $retrieve_event = "SELECT * FROM event";   // All Events event
