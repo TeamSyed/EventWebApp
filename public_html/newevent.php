@@ -1,3 +1,13 @@
+<?php
+    include_once './header.php';
+    if(isset($_POST['submit']) && $_POST['submit']){
+        extract($_POST);
+        $query = "INSERT INTO `events`.`event` (`title`, `category_id`, `address`, `city`, `province`, `postal_code`, `type`, `date`, `time`, `description`) VALUES ('$title', '$cat', '$address', '$city', '$province', '$postal_code', '$type', '$date', '$time', '$description');";
+        $exe_query = mysql_query($query);
+        if($exe_query) {$message = "Event was created !"; $color = "greenyellow";}
+        else {$message = "Error while inserting event :".mysql_error(); $color = "#ff3333";}
+    }
+?>
 <!DOCTYPE html>
 
 <html>
@@ -6,10 +16,13 @@
         <title></title>
     </head>
     <body>
-        <?php include 'header.php';?>
+        <br />
         <div id="wrap">
             <form name="eventadd" method="post" enctype="multipart/form-data" onsubmit="return validateEventAdd();">
        <table id="addevent">
+           <?php if(isset($message)){  ?>
+           <tr><th colspan="2" style="background: <?php echo $color; ?>;"><?php echo $message; ?></th></tr
+           <?php } ?>
            <tr>
                <td>Title </td><td class="title"><input id="title" type="text" name="title" value="" placeholder="Enter Title"/><br /><div class="err"></div></td>
            </tr>
