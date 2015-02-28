@@ -24,13 +24,22 @@
            <tr><th colspan="2" style="background: <?php echo $color; ?>;"><?php echo $message; ?></th></tr
            <?php } ?>
            <tr>
-               <td>Title </td><td class="title"><input id="title" type="text" name="title" value="" placeholder="Enter Title"/><br /><div class="err"></div></td>
+               <td>Title </td><td class="title"><input id="title" type="text" name="title" value="" placeholder="Enter Title"maxlength="200"/><br /><div class="err"></div></td>
            </tr>
            <tr>
-               <td>Address </td><td class="address"><input id="address" type="text" name="address" value="" placeholder="Enter Address"/><br /><div class="err"></div></td>
+               <td>Address </td><td class="address">
+                   <div class="street"><input id="street" type="text" name="address[]" value="" placeholder="Enter Street Number"/><br /><div class="err"></div></div>
+                   <div class="streetName"><input id="streetName" type="text" name="address[]" value="" placeholder="Enter Street Name" onblur="$(this).val($(this).val().capitalize());"/><br /><div class="err"></div>
+                   <select name="address[]">
+                      <option>Road</option>
+                      <option>Boulevard</option>
+                      <option>Avenue Street</option>
+                   </select>
+                   <br /><div class="err"></div>
+               </td>
            </tr>
            <tr>
-               <td>City </td><td class="city"><input id="city" type="text" name="city" value=""  placeholder="Enter City"/><br /><div class="err"></div></td>
+               <td>City </td><td class="city"><input id="city" type="text" name="city" value=""  placeholder="Enter City" maxlength="50" onblur="$(this).val($(this).val().capitalize());"/><br /><div class="err"></div></td>
            </tr>
             <tr>
                <td>Province </td><td class="province"><select name="province" id="province">
@@ -48,7 +57,7 @@
                     </select>  <br /><div class="err"></div>      </td>
            </tr>
            <tr>
-               <td>Postal Code </td><td class="postal_code"><input id="postal_code" type="text" name="postal_code" value="" placeholder="Enter Postal Code"/><br /><div class="err"></div></td>
+               <td>Postal Code </td><td class="postal_code"><input id="postal_code" type="text" name="postal_code" value="" placeholder="Enter Postal Code" onkeyup="$(this).val($(this).val().toUpperCase());"/><br /><div class="err"></div></td>
            </tr>
            <tr>
                <td>Event Type </td><td><input type="radio" name="type" value="Public" checked="checked"/> Public&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="radio" name="type" value="Private" /> Private</td>
