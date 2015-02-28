@@ -37,3 +37,6 @@ table#addevent img {height: 150px; width : 150px; border: 1px solid black; paddi
 #bottom{text-align: center;}
 .paging-list{ width: auto; float: left; margin: 0px 10px;}
 .paging-list > li{ display: inline; }
+.viewEvents, .viewEvents td, .viewEvents th{border: 1px solid #222; padding: 1px; text-align: center;}
+.viewEvents{margin: 4%;}
+.viewEvents td a{margin-right: 15px;}
