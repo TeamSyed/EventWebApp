@@ -2,6 +2,7 @@
     include_once './header.php';
     if(isset($_POST['submit']) && $_POST['submit']){
         extract($_POST);
+        $address = implode(", ",$address);
         $query = "INSERT INTO `events`.`event` (`title`, `category_id`, `address`, `city`, `province`, `postal_code`, `type`, `date`, `time`, `description`) VALUES ('$title', '$cat', '$address', '$city', '$province', '$postal_code', '$type', '$date', '$time', '$description');";
         $exe_query = mysql_query($query);
         if($exe_query) {$message = "Event was created !"; $color = "greenyellow";}
