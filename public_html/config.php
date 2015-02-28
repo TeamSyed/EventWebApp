@@ -63,8 +63,8 @@ error_reporting(E_ALL ^ E_DEPRECATED);
     // Creating images table
     $images_query = 'CREATE TABLE IF NOT EXISTS `'.$tbl_images.'` (
                         `image_id` int(11) NOT NULL AUTO_INCREMENT,
-                        `image_name` text NOT NULL,
                         `image_url` text NOT NULL,
+                        `image_name` text NOT NULL,
                         `image_type` text NOT NULL,
                         PRIMARY KEY (`image_id`)
                       ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1';
