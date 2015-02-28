@@ -7,8 +7,9 @@
     </head>
     <body>
         <?php include 'header.php';?>
+        
         <div id="wrap">
-            <form name="eventadd" method="post" enctype="multipart/form-data" >
+            <form name="eventadd" method="post" enctype="multipart/form-data" onsubmit="return validateEventAdd();"> >
        <table id="addevent">
            <tr>
                <td>Title </td><td class="title"><input id="title" type="text" name="title" value="" placeholder="Enter Title"/><br /><div class="err"></div></td>
@@ -48,7 +49,7 @@
            </tr>
 
            <tr>
-               <td>Pictures </td><td class="image">   <input type="file" id="image" name="image" id="image"><input type="submit" value="Upload Image" name="upload"> <br /><div class="err"></div>
+               <td>Pictures </td><td class="image">   <input type="file" id="image" name="image" ><input type="submit" value="Upload Image" name="upload"> <br /><div class="err"></div>
                     <?php
                     
 if (isset($_POST['upload'])){
@@ -57,6 +58,7 @@ if (isset($_POST['upload'])){
     $image_type = $_FILES['image']['type'];
     $image_size = $_FILES['image']['size'];
     $image_tmp_name = $_FILES['image']['tmp_name'];
+    $filepath = = "uploads/".$image_name;
     $error = null; 
     $allowed = array("image/jpeg", "image/gif");
     // Get the file extension
@@ -78,11 +80,15 @@ if (isset($_POST['upload'])){
         move_uploaded_file($image_tmp_name,"uploads/$image_name");
     echo " <img src='uploads/$image_name'/>"
     ;
+    $sql = "INSERT INTO image (image_name,image_path,image_type) VALUES ('$image_name','$filepath','$image_type')";
+	$result = mysql_query($sql);
+}
+
 }
 ?></td>
            </tr>
            <tr>
-               <td> </td><td><button type="submit" name="submit" value="Upload Image" class="btn btn-primary">Submit</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" class="btn btn-primary">Cancel</button></td>
+               <td> </td><td><button type="submit" name="submit" value="" class="btn btn-primary">Submit</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" class="btn btn-primary">Cancel</button></td>
            </tr>
        </table>
             </form>
