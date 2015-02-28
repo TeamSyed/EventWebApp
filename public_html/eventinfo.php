@@ -1,5 +1,17 @@
 
- <?php include 'header.php';?>
+<?php 
+ include_once './header.php';
+if(isset($_GET['id']))
+{ 
+$id = mysql_real_escape_string($_GET['id']);
+
+$query = 'SELECT * FROM `events`.`event` WHERE `id` = '.$id.' LIMIT 1';
+$result = mysql_query($query);
+$row = mysql_fetch_array($result);
+}
+
+
+?>
 <div style="height: 80%; margin: 10% auto 0 auto; width: 70%">
 <table>
     <tr>
@@ -10,27 +22,27 @@
             <table>
                 <tr>
                     <td style="width:40%">Date &amp; Time</td>
-                    <td style="width:60%">xxxx-xx-xx xx:xx AM</td>
+                    <td style="width:60%"><?php echo $row['date'], ' ',  $row['time'] ?> </td>
                 </tr>
                 <tr>
                     <td>Title</td>
-                    <td>title</td>
+                    <td><?php echo $row['title'] ?></td>
                 </tr>
                 <tr>
                     <td>Venue</td>
-                    <td>address, city and postal code</td>
+                    <td><?php echo $row['address'], ' ',  $row['city'], ' ', $row['province'], ' ', $row['postal_code'] ?></td>
                 </tr>
                 <tr>
                     <td>Category</td>
-                    <td>category</td>
+                    <td><?php echo $row['category_id'] ?></td>
                 </tr>
                 <tr>
                     <td>Type of Event</td>
-                    <td>type</td>
+                    <td><?php echo $row['type'] ?></td>
                 </tr>
                 <tr>
                     <td>Event Description</td>
-                    <td>description</td>
+                    <td><?php echo $row['description'] ?></td>
                 </tr>
                 <tr>
                     <td>Picture</td>
@@ -46,5 +58,5 @@
         <td><img src="uploads/download.jpg"></td>
     </tr>
 </table>
-</div>
+</div>?>
    <?php include 'footer.php';?>
