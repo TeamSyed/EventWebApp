@@ -18,6 +18,18 @@
     $$qry_cate['name'] = "selected";
     $category_name = explode(" ", $qry_cate['name']);
     if(count($category_name)>1) $$category_name[1] = "selected";
+    
+    if(isset($_POST['update']) && $_POST['update']){
+        extract($_POST);
+        $address = implode(", ",$address);
+        $cur_date = date("Y-m-d h:i:s", time());
+        $query = "UPDATE `".$tbl_events."` set title='$title', category_id='$cat', "
+            . "address='$address', city='$city', postal_code='$postal_code', date='$date', time='$time', "
+            . "description='$description', updated_at='$cur_date' where id='$event_id'";
+        $exe_query = mysql_query($query);
+        if($exe_query) {$message = "Event was Updated !"; $color = "greenyellow";}
+        else {$message = "Error while updating event :".mysql_error(); $color = "#ff3333";}
+    }
 ?>
 <!DOCTYPE html>
 
@@ -35,7 +47,9 @@
            <tr><th colspan="2" style="background: <?php echo $color; ?>;"><?php echo $message; ?></th></tr
            <?php } ?>
            <tr>
-               <td>Title </td><td class="title"><input id="title" type="text" name="title" value="<?php echo $edit_data['title']; ?>" placeholder="Enter Title"maxlength="200"/><br /><div class="err"></div></td>
+               <td>Title </td><td class="title">
+                   <input id="title" type="text" name="title" value="<?php echo $edit_data['title']; ?>" placeholder="Enter Title"maxlength="200"/>
+                   <input name="event_id" type="hidden" value="<?php echo $edit_data['id']; ?>"><br /><div class="err"></div></td>
            </tr>
            <tr>
                <td>Address </td><td class="address">
@@ -130,7 +144,7 @@ if (isset($_POST['upload'])){
 ?></td>
            </tr>
            <tr>
-               <td> </td><td><button type="submit" name="submit" value="Upload Image" class="btn btn-primary">Submit</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" class="btn btn-primary">Cancel</button></td>
+               <td> </td><td><button type="submit" name="update" value="Upload Image" class="btn btn-primary">Submit</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" class="btn btn-primary">Cancel</button></td>
            </tr>
        </table>
             </form>
