@@ -34,3 +34,6 @@ table#addevent img {height: 150px; width : 150px; border: 1px solid black; paddi
 #search { float : right; margin-top: 50px; padding: 20px;}
 #search button{ margin-top: -10px}
 #asearch { width: 350px; clear: both; float: right; border: 2px solid white; color: white; background :  url(../graphics/menubg.jpg); display:none}
+#bottom{text-align: center;}
+.paging-list{ width: auto; float: left; margin: 0px 10px;}
+.paging-list > li{ display: inline; }

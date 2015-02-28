@@ -109,8 +109,8 @@ error_reporting(E_ALL ^ E_DEPRECATED);
                     ('Concert', ''),
                     ('Meeting', ''),
                     ('Party', '');";
-    $default_cats_insert = mysql_query($default_cats);
-    if(!$default_cats_insert) echo "Error while inserting into ".$tbl_categories.": ".  mysql_error();
+//    $default_cats_insert = mysql_query($default_cats);
+//    if(!$default_cats_insert) echo "Error while inserting into ".$tbl_categories.": ".  mysql_error();
 
 //     Query for advanced search
 //     $adv_search = "SELECT * from ".$tbl_events." WHERE `title` LIKE '%$srch_title%' OR `category` LIKE '%$srch_category%' OR DATE_FORMAT(created_at, "%m/%d/%Y") BETWEEN DATE_FORMAT('$srch_frm_date', "%m/%d/%Y") AND DATE_FORMAT('$srch_to_date', "%m/%d/%Y") OR DATE_FORMAT(created_at, "%h:%i %p") BETWEEN DATE_FORMAT('$srch_frm_time', "%h:%i %p") AND DATE_FORMAT('$srch_to_time', "%h:%i %p")";    
