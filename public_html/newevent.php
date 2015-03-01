@@ -33,14 +33,15 @@
            </tr>
            <tr>
                <td>Address </td><td class="address">
-                   <div class="street"><input id="street" type="text" name="address[]" value="" placeholder="Enter Street Number"/><br /><div class="err"></div></div>
+                   <div class="street"><input id="street" type="text" name="address[]" value="" placeholder="Enter Street Number"/><div class="err"></div></div>
                    <div class="streetName"><input id="streetName" type="text" name="address[]" value="" placeholder="Enter Street Name" onblur="$(this).val($(this).val().capitalize());"/><br /><div class="err"></div>
                    <select name="address[]">
                       <option>Road</option>
                       <option>Boulevard</option>
-                      <option>Avenue Street</option>
+                      <option>Avenue</option>
+                      <option>Street</option>
                    </select>
-                   <br /><div class="err"></div>
+                   </div>
                </td>
            </tr>
            <tr>

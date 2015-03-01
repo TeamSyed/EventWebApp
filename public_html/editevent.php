@@ -8,7 +8,6 @@
     $edit_data['address'] = explode(", ", $edit_data['address']);
     
     $$edit_data['address'][2] = "selected";
-    $avenue = (!isset($Road) && !isset($Boulevard)) ? "selected" : "";
     $$edit_data['province'] = "selected";
     $$edit_data['type'] = "checked";
    
@@ -58,7 +57,8 @@
                    <select name="address[]">
                       <option <?php echo (isset($Road)) ? $Road: ""; ?>>Road</option>
                       <option <?php echo (isset($Boulevard)) ? $Boulevard: ""; ?>>Boulevard</option>
-                      <option <?php echo (isset($avenue)) ? $avenue: ""; ?>>Avenue Street</option>
+                      <option <?php echo (isset($Avenue)) ? $Avenue: ""; ?>>Avenue</option>
+                      <option <?php echo (isset($Street)) ? $Street: ""; ?>>Street</option>
                    </select>
                    <br /><div class="err"></div>
                </td>
