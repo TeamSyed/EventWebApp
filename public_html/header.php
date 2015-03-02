@@ -16,6 +16,10 @@
     <script src="js/bootstrap-timepicker.min.js"></script>
     <script src="js/search.js"></script>
     <script src="js/validations.js"></script>
+    <script
+src="http://maps.googleapis.com/maps/api/js">
+</script>
+    <script src="js/map.js"></script>
    
     <!-- STYLE EDITOR -->
     <link href="styleeditor/prettify.css" rel="stylesheet">
@@ -32,7 +36,7 @@
 <?php 
     include_once('config.php');
 ?>
-
+  
 
     <title>Rohit's WebSite</title>
 </head>
