@@ -54,8 +54,8 @@ src="http://maps.googleapis.com/maps/api/js">
            <form action="search.php" method="post"> 
            <div id="search">
                 <input type="text" name="search" placeholder="By Event Title, Decription, Address, City"   />
-                <input id="searchbtn" type="submit"  value="Search" name="search" class="btn btn-primary"/><br />
-                <button type="button" name="asearch" id="flip" value="Advanced Search Results" class="btn btn-info">Adavnced Search</button>
+                <input id="searchbtn" type="submit"  value="Search" name="basicSearch" class="btn btn-primary"/><br />
+                <button type="button" name="asearch" id="flip" value="Advanced Search Results" class="btn btn-info">Advanced Search</button>
             </div></form>
             <div id="asearch">
                 <form action="search.php" method="post">
@@ -81,7 +81,7 @@ src="http://maps.googleapis.com/maps/api/js">
 
                     <tr>
 
-               <td> </td><td><input  type="submit"  value="Search" name="search" class="btn btn-success"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" id="cancel" class="btn btn-success">Cancel</button></td>
+               <td> </td><td><input  type="submit"  value="Search" name="advancedSearch" class="btn btn-success"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" id="cancel" class="btn btn-success">Cancel</button></td>
            </tr>
                 </table></form>
             </div>

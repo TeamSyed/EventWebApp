@@ -27,7 +27,7 @@ include 'header.php';
      OR description LIKE '%".$_POST['search']."%'
      OR category LIKE '%".$_POST['search']."%'
      OR location LIKE '%".$_POST['search']."%'
-     OR time LIKE '%".$_POST['search']."%';
+     OR time LIKE '%".$_POST['search']."%'";
      
      $search_query=mysql_query($search_sql);
      //this is where the results of the query are put 

@@ -11,6 +11,8 @@
             </div>
             
                 <?php 
+                
+                
                 //connect to database 
                 $mysqli = new mysqli('localhost','root','',DB_NAME);
                 /*============================================*/
@@ -24,9 +26,13 @@
                 $start=($pg-1)*$per_page;
                 /*============================================*/
                 
+                if (isset($_POST['search'])) {
+                    // Filter
+                    $keyword = trim ($_POST['search']);
+                }
                 
                 //query the database
-                $resultSet = $mysqli->query("SELECT * from  $tbl_events ORDER BY title ASC limit $start,$per_page");
+                $resultSet = $mysqli->query("SELECT * FROM event WHERE title LIKE '%$keyword%' OR description LIKE '%$keyword%' OR address LIKE '%$keyword%' ORDER BY title ASC limit $start,$per_page");
                 
                 
                 //count the returned rows

@@ -17,30 +17,44 @@ function validateEventAdd(){
     
     var regex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
     
-    var ids = ['title', 'street', 'streetName', 'city','province', 'postal_code', 'category','image', 'description'];
+    var ids = ['title', 'street', 'streetName', 'city','province', 'date', 'time', 'postal_code', 'category', 'description'];
     var status = true;
     for(i=0;i<ids.length;i++){
         var idVal = $("#"+ids[i]).val();
         if(idVal==""){
             $("."+ids[i]+" .err").html('This field is Required').css({'color':'#f00','font-size':'15px'});
-            return false;
+            status = false;
         } else {
             $("."+ids[i]+" .err").html('');
+             status = true;
         }
         if(ids[i] == "street"){
             if(!numreg.test($("#street").val())){ 
                 $(".street .err").html('Numerics Only & not starting with 0').css({'color':'#f00','font-size':'15px'});
-                return false;
-            } else $(".street .err").html('');
+               status = false;
+            } else {
+                $(".street .err").html('');
+                 status = true;
+            }
         }
         if(ids[i] == "postal_code"){
              if(!regex.test($("#postal_code").val())){ 
                 $(".postal_code .err").html('Invalid Postal Code').css({'color':'#f00','font-size':'15px'});
-                return false;
-            } else $(".postal_code .err").html('');
+                status = false;
+            } else{
+                $(".postal_code .err").html('');
+                 status = true;
+            }
         }
     }
-}
+    if(status){
+        return true;
+       }
+       else
+       {
+           return false;
+       }
+       }
 
 String.prototype.capitalize = function(){
     return this.charAt(0).toUpperCase() + this.slice(1);
