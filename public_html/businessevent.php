@@ -9,15 +9,28 @@
         <?php include 'header.php';?>
         <div id="wrap">
             <form name="eventadd" method="post" enctype="multipart/form-data" onsubmit="return validateEventAdd();">
-       <table id="addevent">
+  <table id="addevent">
+           <?php if(isset($message)){  ?>
+           <tr><th colspan="2" style="background: <?php echo $color; ?>;"><?php echo $message; ?></th></tr
+           <?php } ?>
            <tr>
-               <td>Title </td><td class="title"><input id="title" type="text" name="title" value="" placeholder="Enter Title"/><br /><div class="err"></div></td>
+               <td>Title </td><td class="title"><input id="title" type="text" name="title" value="" placeholder="Enter Title"maxlength="200"/><br /><div class="err"></div></td>
            </tr>
            <tr>
-               <td>Address </td><td class="address"><input id="address" type="text" name="address" value="" placeholder="Enter Address"/><br /><div class="err"></div></td>
+               <td>Address </td><td class="address">
+                   <div class="street"><input id="street" type="text" name="address[]" value="" placeholder="Enter Street Number"/><div class="err"></div></div>
+                   <div class="streetName"><input id="streetName" type="text" name="address[]" value="" placeholder="Enter Street Name" onblur="$(this).val($(this).val().capitalize());"/><br /><div class="err"></div>
+                   <select name="address[]">
+                      <option>Road</option>
+                      <option>Boulevard</option>
+                      <option>Avenue</option>
+                      <option>Street</option>
+                   </select>
+                   </div>
+               </td>
            </tr>
            <tr>
-               <td>City </td><td class="city"><input id="city" type="text" name="city" value=""  placeholder="Enter City"/><br /><div class="err"></div></td>
+               <td>City </td><td class="city"><input id="city" type="text" name="city" value=""  placeholder="Enter City" maxlength="50" onblur="$(this).val($(this).val().capitalize());"/><br /><div class="err"></div></td>
            </tr>
             <tr>
                <td>Province </td><td class="province"><select name="province" id="province">
@@ -35,7 +48,7 @@
                     </select>  <br /><div class="err"></div>      </td>
            </tr>
            <tr>
-               <td>Postal Code </td><td class="postal_code"><input id="postal_code" type="text" name="postal_code" value="" placeholder="Enter Postal Code"/><br /><div class="err"></div></td>
+               <td>Postal Code </td><td class="postal_code"><input id="postal_code" type="text" name="postal_code" value="" placeholder="Enter Postal Code" onkeyup="$(this).val($(this).val().toUpperCase());"/><br /><div class="err"></div></td>
            </tr>
            <tr>
                <td>Event Type </td><td><input type="radio" name="type" value="Public" checked="checked"/> Public&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="radio" name="type" value="Private" /> Private</td>
@@ -53,10 +66,10 @@
                     </select>  <br /><div class="err"></div>      </td>
            </tr>
            <tr>
-               <td>Date </td><td class="date"><input type="date" name="date" id="date" value="" placeholder="Enter Date of Event"/><br /><div class="err"></div></td>
+               <td>Date </td><td class="date"><input  class="dateWidget" type="text" name="date" id="date" value="03/01/2015" placeholder="Enter Date of Event"/><br /><div class="err"></div></td>
            </tr>
            <tr>
-               <td>Time </td><td class="time"><input type="time" name="time" value="" id="time"  placeholder="Enter Time for Event"/><br /><div class="err"></div></td>
+               <td>Time </td><td class="time"><input  class="timeWidget" type="text" name="time" value="" id="time"  placeholder="Enter Time for Event"/><br /><div class="err"></div></td>
            </tr>
            <tr>
                <td colspan="2">Description</td>
@@ -91,6 +104,10 @@
         <a class="btn" data-edit="unlink" title="Remove Hyperlink"><i class="icon-cut"></i></a>
 
       </div>
+         <div class="btn-group">
+            <a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="icon-picture"></i></a>
+            <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
+        </div>
       <div class="btn-group">
         <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
         <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
