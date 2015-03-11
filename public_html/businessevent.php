@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
         <?php include 'header.php';?>
         <div id="wrap">
             <form name="eventadd" method="post" enctype="multipart/form-data" onsubmit="return validateEventAdd();">

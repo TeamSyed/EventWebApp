@@ -90,7 +90,7 @@ src="http://maps.googleapis.com/maps/api/js">
                         <li id="home"><a href="#/home">Home</a></li>
                         <li id="event"><a href="newevent.php">Add an event</a></li>
                         <li id="Contact"><a href="#/about">About Us</a></li>
-                        <li id="eventinfo"><a href="eventinfo.php">Event Information</a></li>
+                        <li id="eventinfo"><a href="viewevents.php">All Events</a></li>
                         <li id="businessevent"><a href="businessevent.php"> Business Event</a></li>
                         
                         

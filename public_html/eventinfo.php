@@ -3,11 +3,11 @@
  include_once './header.php';
 if(isset($_GET['id']))
 { 
-$id = mysql_real_escape_string($_GET['id']);
+    $id = mysql_real_escape_string($_GET['id']);
 
-$query = 'SELECT * FROM `events`.`event` WHERE `id` = '.$id.' LIMIT 1';
-$result = mysql_query($query);
-$row = mysql_fetch_array($result);
+    $query = 'SELECT * FROM `events`.`event` WHERE `id` = '.$id.' LIMIT 1';
+    $result = mysql_query($query);
+    $row = mysql_fetch_array($result);
 }
 
 
@@ -52,7 +52,9 @@ $row = mysql_fetch_array($result);
                     <td>User Comment</td>
                     <td>comment</td>
                 </tr>
-                
+                 <tr>
+                     <td colspan="2"><a href="viewevents.php" class="btn btn-primary btn-mini col-md-12">Back to Event List</a></td>
+                </tr>
             </table>
         </td>
         <td><img src="uploads/download.jpg"></td>

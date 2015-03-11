@@ -19,7 +19,7 @@
                 <?php while($data = mysql_fetch_assoc($getEvents)){?>
                 <tr>
                     <td><img src="uploads/download.jpg" width="50" height="50" alt="EventName"/></td>
-                    <td><a href="#" title="View this Event"><?php echo ucwords($data['title']); ?></a></td>
+                    <td><a href="eventinfo.php?id=<?php echo $data['id']; ?>" title="View this Event"><?php echo ucwords($data['title']); ?></a></td>
                     <td><?php echo ucwords($data['name']); ?></td>
                     <td style="text-align: left;padding: 1px 10px;"><?php echo ucwords($data['address'])."<br />".  ucwords($data['city'])." - ". strtoupper($data['postal_code'])."<br />".  strtoupper($data['province']); ?></td>
                     <td><?php echo $data['date']; ?> at <?php echo $data['time']; ?></td>
