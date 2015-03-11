@@ -1,6 +1,16 @@
-        <?php include 'header.php';?>
+<?php
+    include_once './header.php';
+    if(isset($_POST['submit_business_evt'])){
+        extract($_POST);
+        $address = implode(", ",$address);
+        $query = "INSERT INTO `events`.`event` (`title`, `category_id`, `address`, `city`, `province`, `postal_code`, `type`, `date`, `time`, `description`) VALUES ('$title', '$cat', '$address', '$city', '$province', '$postal_code', '$type', '$date', '$time', '$description');";
+        $exe_query = mysql_query($query);
+        if($exe_query) {$message = "Event was created !"; $color = "greenyellow";}
+        else {$message = "Error while inserting event :".mysql_error(); $color = "#ff3333";}
+    }
+?>        
         <div id="wrap">
-            <form name="eventadd" method="post" enctype="multipart/form-data" onsubmit="return validateEventAdd();">
+            <form name="eventadd" method="post" enctype="multipart/form-data" onsubmit="$('#description_bus').val($('#editor').html()); return validateEventAdd();">
   <table id="addevent">
            <?php if(isset($message)){  ?>
            <tr><th colspan="2" style="background: <?php echo $color; ?>;"><?php echo $message; ?></th></tr
@@ -64,7 +74,10 @@
                <td>Time </td><td class="time"><input  class="timeWidget" type="text" name="time" value="" id="time"  placeholder="Enter Time for Event"/><br /><div class="err"></div></td>
            </tr>
            <tr>
-               <td colspan="2">Description</td>
+               <td colspan="2">
+                   Description
+                   <input type="hidden" name="description" id="description_bus" />
+               </td>
            </tr>
            <tr>
                <td class="description" colspan="2">
@@ -112,7 +125,7 @@
            </tr>
 
            <tr>
-               <td>Pictures </td><td class="image">   <input type="file" id="image" name="image" id="image"><input type="submit" value="Upload Image" name="upload"> <br /><div class="err"></div>
+               <td>Pictures </td><td class="image">   <input type="file" id="image" name="image" id="image"><input type="button" value="Upload Image" name="upload"> <br /><div class="err"></div>
                     <?php
                     
 if (isset($_POST['upload'])){
@@ -146,7 +159,7 @@ if (isset($_POST['upload'])){
 ?></td>
            </tr>
            <tr>
-               <td> </td><td><button type="submit" name="submit" value="Upload Image" class="btn btn-primary">Submit</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" class="btn btn-primary">Cancel</button></td>
+               <td> </td><td><button type="submit" name="submit_business_evt" value="Upload Image" class="btn btn-primary">Submit</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" class="btn btn-primary">Cancel</button></td>
            </tr>
        </table>
             </form>
