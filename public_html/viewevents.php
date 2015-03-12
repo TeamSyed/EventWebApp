@@ -1,6 +1,16 @@
 <?php
     include 'header.php';
-    $getEvents = "SELECT * FROM $tbl_events";
+    /*============================================*/
+    $per_page=5;
+    $tot_rec=mysql_query("select * from $tbl_events");
+    $tot_rec1=  mysql_num_rows($tot_rec);
+    $tot_pages=ceil($tot_rec1/$per_page);
+
+    $pg= (isset($_REQUEST['pg']) && $_REQUEST['pg'])? $_REQUEST['pg']:1;
+    $curPg = ($pg>=1) ? $pg : 0;
+    $start=($pg-1)*$per_page;
+    /*============================================*/
+    $getEvents = "SELECT * FROM $tbl_events limit $start,$per_page";
     $getEvents = mysql_query($getEvents);
 ?>
         <table border="1" class="viewEvents" align="center">
@@ -33,6 +43,13 @@
                     </td>
                 </tr>
                 <?php } ?>
+                <tr>
+                    <td colspan="6"> 
+                        <a href="?pg=<?php echo ($curPg-1); ?>"><img src="Graphics/back.png" width="50px" height="50px" style="float: left;"/></a>
+                <ul class="paging-list"> <?php for($i=1;$i<=$tot_pages;$i++){ echo "<li><a href=?pg=".$i."> ".$i."</a></li>"; } ?></ul>
+                <a href="?pg=<?php echo ($curPg+1); ?>"><img src="Graphics/next.png" width="50px" height="50px" style="float: left;"/></a>
+                    </td>
+                </tr>
             </tbody>
         </table>
 
