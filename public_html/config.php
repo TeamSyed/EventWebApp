@@ -12,7 +12,6 @@ error_reporting(E_ALL ^ E_DEPRECATED);
     $tbl_levels = "levels";
     $tbl_titles = "titles";
     $tbl_users = "users";
-    $tbl_friends = "friends";
     
     $connection = mysql_connect(HOSTNAME, USERNAME, PASSWORD);  // Connecting to Database
     if($connection){
@@ -103,19 +102,6 @@ error_reporting(E_ALL ^ E_DEPRECATED);
     $users_create = mysql_query($users_query);
     if(!$users_create) echo "Error while creating ".$tbl_users.": ".  mysql_error();
     
-    $friend_query = "CREATE TABLE IF NOT EXISTS `".$tbl_friends."` (
-                        `id` int(11) NOT NULL AUTO_INCREMENT,
-                        `user_id` int(11) NOT NULL COMMENT 'user id',
-                        `friend_id` int(11) NOT NULL COMMENT 'user''s friend',
-                        `active` int(11) NOT NULL DEFAULT '0' COMMENT '1 - active; 0 - deleted',
-                        `approved` int(11) NOT NULL DEFAULT '0' COMMENT '1 - approved, 0 - not approved',
-                        `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                        `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                         PRIMARY KEY (`id`)
-                        ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1";
-    $friend_create = mysql_query($friend_query);
-    if(!$friend_create) echo "Error while creating ".$tbl_friends.": ".  mysql_error();
-    
     // Inserting Default Categories
     $default_cats = "INSERT INTO `".$tbl_categories."` (`name`, `description`) VALUES
                     ('Cuisine', ''),
@@ -127,7 +113,7 @@ error_reporting(E_ALL ^ E_DEPRECATED);
                     ('Party', '');";
    // $default_cats_insert = mysql_query($default_cats);
    // if(!$default_cats_insert) echo "Error while inserting into ".$tbl_categories.": ".  mysql_error();
-    
+
 //     Query for advanced search
 //     $adv_search = "SELECT * from ".$tbl_events." WHERE `title` LIKE '%$srch_title%' OR `category` LIKE '%$srch_category%' OR DATE_FORMAT(created_at, "%m/%d/%Y") BETWEEN DATE_FORMAT('$srch_frm_date', "%m/%d/%Y") AND DATE_FORMAT('$srch_to_date', "%m/%d/%Y") OR DATE_FORMAT(created_at, "%h:%i %p") BETWEEN DATE_FORMAT('$srch_frm_time', "%h:%i %p") AND DATE_FORMAT('$srch_to_time', "%h:%i %p")";    
    
