@@ -71,13 +71,16 @@ CREATE TABLE IF NOT EXISTS `event` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `event_images`
+-- Table structure for table `tbl_images`
 --
 
-CREATE TABLE IF NOT EXISTS `event_images` (
-  `event_id` int(11) NOT NULL,
-  `picture_id` int(11) NOT NULL
+CREATE TABLE IF NOT EXISTS `tbl_images` (
+`event_id` int(11) NOT NULL,
+ `id tinyint(3) unsigned NOT NULL auto_increment,
+`image blob NOT NULL,
+ PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 -- --------------------------------------------------------
 

@@ -91,10 +91,11 @@
            </tr>
 
            <tr>
-               <td>Pictures </td><td class="image">   <input type="file" id="image" name="image" ><input type="submit" value="Upload Image" name="upload"> <br /><div class="err"></div>
+               <td>Pictures </td><td class="image">   <input type="file" id="image" name="image" > <br /><div class="err"></div>
+                  
                     <?php
                     
-if (isset($_POST['upload'])){
+if (isset($_POST['submit'])){
     $allowed_types =array('jpg','png');
     $image_name = $_FILES['image']['name'];
     $image_type = $_FILES['image']['type'];
@@ -118,11 +119,8 @@ if (isset($_POST['upload'])){
         echo"<script>alert('please select an image.') </script>";
         exit();
     } 
-    else
-        move_uploaded_file($image_tmp_name,"uploads/$image_name");
-    echo " <img src='uploads/$image_name'/>"
-    ;
-    $sql = "INSERT INTO image (image_name,image_url,image_type) VALUES ('$image_name','$filepath','$image_type')";
+    
+    $sql = "INSERT INTO images (image_name,image_url,image_type) VALUES ('$image_name','$filepath','$image_type')";
 	$result = mysql_query($sql);
 }
 
