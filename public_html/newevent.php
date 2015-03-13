@@ -21,6 +21,7 @@
         
         
         <div id="wrap">
+            <h1>Please Insert Event Details Below</h1>
             <form name="eventadd" method="post" enctype="multipart/form-data" onsubmit="return validateEventAdd();"> 
         <br />
         
@@ -108,17 +109,13 @@ if (isset($_POST['submit'])){
     $extension = pathinfo($image_name, PATHINFO_EXTENSION);
 
     // Search the array for the allowed file type
-
     if (in_array($extension, $allowed_types, false) != true) {
-
         echo"<script>alert('only JPEG and GIF formats alowed.')</script>";
         exit();
     }
     
-    if ($image_name == ''){
-        echo"<script>alert('please select an image.') </script>";
-        exit();
-    } 
+    else	
+    move_uploaded_file($image_tmp_name,"uploads/$image_name"); 
     
     $sql = "INSERT INTO images (image_name,image_url,image_type) VALUES ('$image_name','$filepath','$image_type')";
 	$result = mysql_query($sql);

@@ -27,6 +27,7 @@ error_reporting(E_ALL ^ E_DEPRECATED);
                         `id` int(11) NOT NULL AUTO_INCREMENT,
                         `title` varchar(200) NOT NULL,
                         `category_id` int(11) NOT NULL,
+                       
                         `address` text NOT NULL,
                         `city` varchar(50) NOT NULL,
                         `province` varchar(50) NOT NULL,
@@ -62,11 +63,11 @@ error_reporting(E_ALL ^ E_DEPRECATED);
    
     // Creating images table
     $images_query = 'CREATE TABLE IF NOT EXISTS `'.$tbl_images.'` (
-                        `image_id` int(11) NOT NULL AUTO_INCREMENT,
+                        `id` int(11) NOT NULL AUTO_INCREMENT,
                         `image_url` text NOT NULL,
                         `image_name` text NOT NULL,
                         `image_type` text NOT NULL,
-                        PRIMARY KEY (`image_id`)
+                        PRIMARY KEY (`id`)
                       ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1';
     $images_create = mysql_query($images_query);
     if(!$images_create) echo "Error while creating ".$tbl_images.": ".  mysql_error();

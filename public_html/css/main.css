@@ -2,6 +2,9 @@
 body {background : #f2f2f2 url(../graphics/bg.jpg) repeat-x; height:100%}
 html {height : 100%}
 #logo img {  height : 100px; padding: 50px; margin-top:-30px}
+table#view {
+    border : 0px;
+}
 #banner img { height : 110px; padding: 50px; margin-top:-30px;}
 #logo { width: 400px; height: 100px}
 #main {margin-top:50px;background : #222 url(../graphics/data.jpg) repeat-x;max-height:390px; overflow : auto; padding:15px; border: 2px solid white}
@@ -26,7 +29,7 @@ text-align: center;
 clear:both;}
 h1 {color:blue; font-size:20px}
 input#searchbtn {margin-top: -12px;}
-
+img#display {height: 100px; width: 150px; margin: 10px;border: 1px solid red; }
 table#thead  { color : green; font-size: 18px; font-weight:bold}
 #top h4{ Color: red; font:200; margin: 20px}
 

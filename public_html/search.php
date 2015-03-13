@@ -65,9 +65,48 @@
                         
                     }
                 }
-                    else {
-    echo "0 results";
-}
+                    elseif (isset($_POST['advancedSearch'])) {
+                    // Filter
+                    $keyword = trim ($_POST['advancedSearch']);
+                }
+                
+                //query the database
+                $resultSeta = $mysqli->query("SELECT * FROM event WHERE title LIKE '%$keyword%' OR description LIKE '%$keyword%' OR address LIKE '%$keyword%' ORDER BY title ASC limit $start,$per_page");
+                
+                
+                //count the returned rows
+                if($resultSeta->num_rows !=0){
+                    //turn the results into Array
+                    while($rows = $resultSeta->fetch_assoc())
+                    {
+                        $title = $rows['title'];
+                        $location = $rows['address'];
+                        $type = $rows['type'];
+                        $category = $rows['category_id'];
+                        if($category){
+                            $qry_cat = "SELECT * from $tbl_categories where id = $category";
+                            $exe_cat = $mysqli->query($qry_cat);
+                            $cat_name = $exe_cat->fetch_assoc();
+                            $cat_name = $cat_name['name'];
+                        }
+                        $date = $rows['date'];
+                        $time = $rows['time'];
+                        
+                        //$pic = $rows['pic'];
+                        
+                        
+                        echo"<table id='tdata'>
+                        
+                        <tr>
+                        <td>$title</td><td>$location</td><td>$cat_name</td><td>$time</td><td>$date</td>
+                        </tr>
+                        </table>";
+                        
+                    }
+                }
+                else{
+    echo "0 results";}
+
                 ;
                     
                 ?>
