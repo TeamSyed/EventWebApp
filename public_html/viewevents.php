@@ -13,6 +13,7 @@
                     <th>Address</th>
                     <th>Date/Time</th>
                     <th>Operations</th>
+                    <th>View On Map</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,6 +28,7 @@
                         <a href="#">Edit</a>
                         <a href="#">Delete</a>
                     </td>
+                    <td><a href="map.php">Map</a></td>
                 </tr>
                 <?php } ?>
             </tbody>
