@@ -63,7 +63,7 @@ if(isset($_GET['id']))
                 </tr>
             </table>
         </td>
-        <td><img id="displaye" src=<?php echo ucwords($data['image_url']); ?>  alt="EventName"/></td>
+        <td><img id="displaye" src=<?php echo ucwords($data['image_url']); ?>  alt="No Image Was Selected"/></td>
     </tr>
 </table>
 </div>?>

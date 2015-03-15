@@ -5,7 +5,7 @@
                 <h4>Your Search Produced following Results</h4>
                 <table id="thead">
                     <tr>
-                        <td>Title</td><td>Location</td><td>Category</td><td>Time</td><td>Date</td>
+                        <td>Title</td><td>Location</td><td>Time</td><td>Date</td>
                         </tr>
                 </table>
             </div>
@@ -26,13 +26,14 @@
                 $start=($pg-1)*$per_page;
                 /*============================================*/
                 
-                if (isset($_POST['search'])) {
+                if (isset($_POST['advancedSearch'])) {
                     // Filter
-                    $keyword = trim ($_POST['search']);
+                    $keyword = trim ($_POST['advancedSearch']);
                 }
                 
                 //query the database
-                $resultSet = $mysqli->query("SELECT * FROM event WHERE title LIKE '%$keyword%' OR description LIKE '%$keyword%' OR address LIKE '%$keyword%' ORDER BY title ASC limit $start,$per_page");
+                $resultSet = $mysqli->query("SELECT * FROM event WHERE title LIKE '%$keyword%' AND  
+date between 'sdate' AND 'edate' AND time between 'stime' AND 'etime'ORDER BY title ASC limit $start,$per_page");
                 
                 
                 //count the returned rows
@@ -59,7 +60,7 @@
                         echo"<table id='tdata'>
                         
                         <tr>
-                        <td>$title</td><td>$location</td><td>$cat_name</td><td>$time</td><td>$date</td>
+                        <td>$title</td><td>$location</td><td>$time</td><td>$date</td>
                         </tr>
                         </table>";
                         

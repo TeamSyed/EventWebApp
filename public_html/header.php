@@ -58,7 +58,7 @@ src="http://maps.googleapis.com/maps/api/js">
                 <button type="button" name="asearch" id="flip" value="Advanced Search Results" class="btn btn-info">Advanced Search</button>
             </div></form>
             <div id="asearch">
-                <form action="search.php" method="post">
+                <form action="asearch.php" method="post">
                 <table id="advanced">
                     <tr>
                <td>Title </td><td><input type="text" name="title" value="" /></td>
