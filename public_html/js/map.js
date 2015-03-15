@@ -17,7 +17,7 @@ function initialize() {
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
-    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    var map = new google.maps.Map(document.getElementById("gooogleMap"), mapProp);
 
     var myTrip = [stavanger, amsterdam, london];
     var flightPath = new google.maps.Polyline({

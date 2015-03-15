@@ -109,10 +109,16 @@ if (isset($_POST['submit'])){
     $extension = pathinfo($image_name, PATHINFO_EXTENSION);
 
     // Search the array for the allowed file type
-    if (in_array($extension, $allowed_types, false) != true) {
+       if (empty($_FILES['image']['name'])) {
+    // No file was selected for upload,
+        echo"<script>alert('No image was uploaded.')</script>";
+}
+    elseif (in_array($extension, $allowed_types, false) != true) {
         echo"<script>alert('only JPEG and GIF formats alowed.')</script>";
+        
         exit();
     }
+ 
     
     else	
     move_uploaded_file($image_tmp_name,"uploads/$image_name"); 

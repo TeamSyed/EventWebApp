@@ -5,20 +5,26 @@ if(isset($_GET['id']))
 { 
     $id = mysql_real_escape_string($_GET['id']);
 
-    $query = 'SELECT * FROM `events`.`event` WHERE `id` = '.$id.' LIMIT 1';
+    $query = 'SELECT * FROM `events`.`event`  WHERE `id` = '.$id.' LIMIT 1';
     $result = mysql_query($query);
     $row = mysql_fetch_array($result);
 }
 
 
+
+    
+    $getEvents = "SELECT * FROM $tbl_events as ev LEFT JOIN $tbl_categories as cat on ev.category_id = cat.id LEFT JOIN $tbl_images as img on ev.id = img.id";
+    $getEvents = mysql_query($getEvents);
+    $data = mysql_fetch_assoc($getEvents);
 ?>
+
 <div style="height: 80%; margin: 10% auto 0 auto; width: 70%">
 <table>
     <tr>
-        <th colspan="2">Event Information</th>
+        <th colspan="2"><h1>Event Information</h1></th>
     </tr>
     <tr>
-        <td style="vertical-align: top; width: 80%;">
+        <td style="vertical-align: top; width: 50%;">
             <table>
                 <tr>
                     <td style="width:40%">Date &amp; Time</td>
@@ -57,7 +63,7 @@ if(isset($_GET['id']))
                 </tr>
             </table>
         </td>
-        <td><img src="uploads/download.jpg"></td>
+        <td><img id="displaye" src=<?php echo ucwords($data['image_url']); ?>  alt="EventName"/></td>
     </tr>
 </table>
 </div>?>

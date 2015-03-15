@@ -22,15 +22,15 @@ src="http://maps.googleapis.com/maps/api/js">
     <script src="js/map.js"></script>
    
     <!-- STYLE EDITOR -->
-    <link href="styleeditor/prettify.css" rel="stylesheet">
-    <link href="styleeditor/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-    <link href="styleeditor/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+    <link href="styleeditor/prettify.css" rel="stylesheet"/>
+    <link href="styleeditor/bootstrap-combined.no-icons.min.css" rel="stylesheet"/>
+    <link href="styleeditor/bootstrap-responsive.min.css" rel="stylesheet"/>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet"/>
     
     <script src="styleeditor/jquery.hotkeys.js"></script>
     
     <script src="styleeditor/prettify.js"></script>
-    <link href="styleeditor/index.css" rel="stylesheet">
+    <link href="styleeditor/index.css" rel="stylesheet"/>
     <script src="styleeditor/bootstrap-wysiwyg.js"></script>
     
 <?php 
