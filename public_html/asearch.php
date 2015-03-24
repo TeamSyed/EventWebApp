@@ -26,14 +26,13 @@
                 $start=($pg-1)*$per_page;
                 /*============================================*/
                 
-                if (isset($_POST['advancedSearch'])) {
+                if (isset($_POST['search'])) {
                     // Filter
-                    $keyword = trim ($_POST['advancedSearch']);
+                    $keyword1 = trim ($_POST['search']);
                 }
                 
                 //query the database
-                $resultSet = $mysqli->query("SELECT * FROM event WHERE title LIKE '%$keyword%' AND  
-date between 'sdate' AND 'edate' AND time between 'stime' AND 'etime'ORDER BY title ASC limit $start,$per_page");
+                $resultSet = $mysqli->query("SELECT * FROM event WHERE title LIKE '%$keyword1%' OR date BETWEEN 'sdate' AND 'edate' ORDER BY title ASC limit $start,$per_page");
                 
                 
                 //count the returned rows

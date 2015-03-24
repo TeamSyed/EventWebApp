@@ -50,14 +50,7 @@ if(isset($_GET['id']))
                     <td>Event Description</td>
                     <td><?php echo $row['description'] ?></td>
                 </tr>
-                <tr>
-                    <td>Picture</td>
-                    <td>pic</td>
-                </tr>
-                <tr>
-                    <td>User Comment</td>
-                    <td>comment</td>
-                </tr>
+               
                  <tr>
                      <td colspan="2"><a href="viewevents.php" class="btn btn-primary btn-mini col-md-12">Back to Event List</a></td>
                 </tr>
