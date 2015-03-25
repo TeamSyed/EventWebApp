@@ -14,11 +14,13 @@ $(document).ready(function () {
 $(document).ready(function () {
  $("#openDir").click(function(){
         $("#loadAddress").slideDown("slow");
+$("#openDir").hide();
     });
 });
 $(document).ready(function () {
     $("#cancelAddress").click(function () {
         $("#loadAddress").slideUp("slow");
+$("#openDir").show(2000);
     });
 });
 

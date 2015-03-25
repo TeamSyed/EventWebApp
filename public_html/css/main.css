@@ -37,7 +37,7 @@ table#thead  { color : green; font-size: 18px; font-weight:bold}
 table#addevent img {height: 150px; width : 150px; border: 1px solid black; padding: 2px;margin: 5px;}
 #search { float : right; margin-top: 50px; padding: 20px;}
 #search button{ margin-top: -10px}
-#asearch { width: 350px; clear: both; float: right; border: 2px solid white; color: white; background :  url(../graphics/menubg.jpg); display:none}
+#asearch { width: 350px; clear: both; float: right; border: 2px solid white; color: white; background :  url(../graphics/menubg.jpg); display:none; z-index:9999}
 #bottom{text-align: center;}
 .paging-list{ width: auto; float: left; margin: 0px 10px;}
 .paging-list > li{ display: inline; }
@@ -45,10 +45,12 @@ table#addevent img {height: 150px; width : 150px; border: 1px solid black; paddi
 .viewEvents{margin: 4%;}
 .viewEvents td a{margin-right: 15px;}
 table#adressTable {width: 150px}
-#loadAddress { width: 350px; clear: both; float: left; border: 2px solid white; color: white; background :  url(../graphics/menubg.jpg); display:none}
+#loadAddress { width: 350px; clear: both; float: left; border: 2px solid white; margin-left: 20px; color: white; background :  url(../graphics/menubg.jpg); display:none}
+#directions {margin-left:20px}
 #gooogleMap {
     height: 850px;
     width: 1000px;
     position: fixed;
+    z-index:-1;
     
 }
