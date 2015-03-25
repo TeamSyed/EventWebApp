@@ -43,7 +43,9 @@
                         $title = $rows['title'];
                         $location = $rows['address'];
                         $type = $rows['type'];
+                        $id = $rows['id'];
                         $category = $rows['category_id'];
+                        
                         if($category){
                             $qry_cat = "SELECT * from $tbl_categories where id = $category";
                             $exe_cat = $mysqli->query($qry_cat);
@@ -59,7 +61,7 @@
                         echo"<table id='tdata'>
                         
                         <tr>
-                        <td>$title</td><td>$location</td><td>$cat_name</td><td>$time</td><td>$date</td>
+                        <td><a href='eventinfo.php?id=$id'>$title</a></td><td>$location</td><td>$cat_name</td><td>$time</td><td>$date</td>
                         </tr>
                         </table>";
                         
