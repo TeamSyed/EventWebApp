@@ -50,7 +50,6 @@ table#adressTable {width: 150px}
 #gooogleMap {
     height: 850px;
     width: 1000px;
-    position: fixed;
-    z-index:-1;
+    position: relative;
     
 }
