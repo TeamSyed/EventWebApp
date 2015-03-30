@@ -1,14 +1,23 @@
-var x = new google.maps.LatLng(52.395715, 4.888916);
-var a, b;
- 
-var stavanger = new google.maps.LatLng(a,b);
-var amsterdam = new google.maps.LatLng(52.395715, 4.888916);
-var london = new google.maps.LatLng(51.508742, -0.120850);
-console.log(a,b);
+
+
 function initialize() {
+    var startLong = document.getElementById("long").textContent;
+    var startLat = document.getElementById("lat").textContent;
+    var stavanger = new google.maps.LatLng(startLong, startLat);
+    var amsterdam = new google.maps.LatLng(43.68590, -79.75994);
+    document.getElementById("adressSearch").addEventListener("click", function () {
+        
+        var a;
+        a === document.getElementById("destinationAddress").value ;
+        console.log(a);
+    });
+        
+    
+    //console.log(startLat, startLong, stavanger);
+    
     var mapProp = {
-        center: x,
-        zoom: 5,
+        center: stavanger,
+        zoom: 10,
         panControl: true,
         zoomControl: true,
         mapTypeControl: true,
@@ -18,7 +27,7 @@ function initialize() {
         rotateControl: true,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-
+   
     var map = new google.maps.Map(document.getElementById("gooogleMap"), mapProp);
 
     var myTrip = [stavanger, amsterdam];
