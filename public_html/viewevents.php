@@ -28,7 +28,7 @@
                         <a href="#">Edit</a>
                         <a href="#">Delete</a>
                     </td>
-                    <td><a href="map.php">Map</a></td>
+                    <td>><a href="map.php?id=<?php echo $data['id']; ?>" title="View this Event"><h2>map</h2></a></td>
                 </tr>
                 <?php } ?>
             </tbody>
