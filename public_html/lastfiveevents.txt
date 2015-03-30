@@ -1,0 +1,8 @@
+select * 
+from events
+where eventid not in (
+    select top (
+        (select count(*) from events) - 5
+    ) eventid
+    from events
+)
