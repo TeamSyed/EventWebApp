@@ -1,8 +1,10 @@
 var x = new google.maps.LatLng(52.395715, 4.888916);
-var stavanger = new google.maps.LatLng(58.983991, 5.734863);
+var a, b;
+ 
+var stavanger = new google.maps.LatLng(a,b);
 var amsterdam = new google.maps.LatLng(52.395715, 4.888916);
 var london = new google.maps.LatLng(51.508742, -0.120850);
-
+console.log(a,b);
 function initialize() {
     var mapProp = {
         center: x,
@@ -26,9 +28,9 @@ function initialize() {
         strokeOpacity: 0.8,
         strokeWeight: 2
     });
-    var markerStart=new google.maps.Marker({
-        position:stavanger,
-        animation:google.maps.Animation.BOUNCE
+    var markerStart = new google.maps.Marker({
+        position: stavanger,
+        animation: google.maps.Animation.BOUNCE
     });
     var markerEnd = new google.maps.Marker({
         position: amsterdam,
