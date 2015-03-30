@@ -64,15 +64,7 @@ src="http://maps.googleapis.com/maps/api/js">
                <td>Title </td><td><input type="text" name="title" value="" /></td>
            </tr>
            
-                    <tr>
-               <td>Category </td><td><select name="cat" id="">
-                      <option value="cat1">category 1</option>
-                      <option value="cat2">category 2</option>
-                      <option value="cat3">category 3</option>
-                      <option value="cat4">category 4</option>
-                    </select>        </td>
-           </tr>
-                    <tr>
+                    
                <td>Date </td><td>From <input type="date" name="sdate" class="dateWidget" value="" id="date"/>To: <input id="date" class="dateWidget" type="date" name="edate" value="" /></td>
            </tr>
                     <tr>
@@ -81,7 +73,7 @@ src="http://maps.googleapis.com/maps/api/js">
 
                     <tr>
 
-               <td> </td><td><input  type="submit"  value="Search" name="advancedSearch" class="btn btn-success"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" id="cancel" class="btn btn-success">Cancel</button></td>
+               <td> </td><td><input  type="submit"  value="Search" name="Search" class="btn btn-success"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" id="cancel" class="btn btn-success">Cancel</button></td>
            </tr>
                 </table></form>
             </div>
