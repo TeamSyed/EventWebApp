@@ -1,5 +1,6 @@
 <?php 
  include_once './header.php';
+ error_reporting(E_ERROR | E_PARSE);
 if(isset($_GET['id']))
 { 
     $id = mysql_real_escape_string($_GET['id']);
