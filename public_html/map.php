@@ -17,13 +17,13 @@ if(isset($_GET['id']))
     $data = mysql_fetch_assoc($getEvents);
 ?>
 <div id="directions">
-<button type="button" name="dir" id="openDir" value="Advanced Search Results" class="btn btn-info">Get Directions</button>
+<button type="button" name="dir" id="openDir"  class="btn btn-info">Get Directions</button>
 </div>
 <div id="loadAddress">
-<form ><table id="adressTable">
+<form action="" method="post"><table id="adressTable">
    <tr><td>Start Point</td> <td><input type="text" name="startAddress"/></td></tr>
-   <tr><td>Destination Point</td> <td><input type="text" name="destinationAddress"/></td></tr>
-   <tr><td><button type="button" id="adressSearch" class="btn btn-success">Search</button></td></td><td><button type="button" id="cancelAddress" class="btn btn-success">Cancel</button></td></td></tr>
+   <tr><td>Destination Point</td> <td><input type="text" name="destinationAddress" id="destinationAddress"  /></td></tr>
+   <tr><td><input type="submit" name="submit" value="Submit"/></td></td><td><button type="button" id="cancelAddress" class="btn btn-success">Cancel</button></td></td></tr>
     
    </table> </form>
 </div>
@@ -36,21 +36,45 @@ include "geocode.class.php";
 $location =  $row['address'];
 $city = $row['city'];
 $postalCode = $row['postal_code'];
+$startAddress = $_POST['destinationAddress'];
 $address = urlencode(trim($location,$postalCode));
 $loc = geocoder::getLocation($address);
 echo "Lat: ".$loc["lat"];
 echo "<br />";
 echo "Long: ".$loc["lng"];
+
 ?>
-<div id="long" value=".$loc['lat']">
+
+<div id="long">
 <?php
-echo "Lat: ".$loc["lat"];
+echo $loc["lat"];
 ?>
 </div>
-<div id="lat"><label>
+<div id="lat">
 <?php
-echo "long: ".$loc["lng"];
-?></label>
+echo $loc["lng"];
+?>
+</div>
+<?php
+if(isset($_POST['submit']) && $_POST['submit']=='Submit'){
+     $name=$_POST['destinationAddress'];
+     echo $name;
+     }
+$address1 = urlencode(trim($name));
+$loc1 = geocoder::getLocation($address1);
+echo "Lat: ".$loc1["lat"];
+echo "<br />";
+echo "Long: ".$loc1["lng"];
+        ?>
+       <div id="endLat">
+<?php
+echo $loc1["lat"];
+?>
+</div>
+<div id="endLong">
+<?php
+echo $loc1["lng"];
+?>
 </div>
 
 <?php include'footer.php'

@@ -33,6 +33,7 @@ src="http://maps.googleapis.com/maps/api/js">
     <link href="styleeditor/index.css" rel="stylesheet"/>
     <script src="styleeditor/bootstrap-wysiwyg.js"></script>
     
+    
 <?php 
     include_once('config.php');
 ?>

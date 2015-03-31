@@ -3,21 +3,18 @@
 function initialize() {
     var startLong = document.getElementById("long").textContent;
     var startLat = document.getElementById("lat").textContent;
+    var endLong = document.getElementById("endLong").textContent;
+    var endLat = document.getElementById("endLat").textContent;
     var stavanger = new google.maps.LatLng(startLong, startLat);
-    var amsterdam = new google.maps.LatLng(43.68590, -79.75994);
-    document.getElementById("adressSearch").addEventListener("click", function () {
-        
-        var a;
-        a === document.getElementById("destinationAddress").value ;
-        console.log(a);
-    });
+    var amsterdam = new google.maps.LatLng(endLat, endLong);
+    
         
     
     //console.log(startLat, startLong, stavanger);
     
     var mapProp = {
         center: stavanger,
-        zoom: 10,
+        zoom: 15,
         panControl: true,
         zoomControl: true,
         mapTypeControl: true,

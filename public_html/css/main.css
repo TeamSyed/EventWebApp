@@ -48,7 +48,7 @@ table#adressTable {width: 150px}
 #loadAddress { width: 350px; clear: both; float: left; border: 2px solid white; margin-left: 20px; color: white; background :  url(../graphics/menubg.jpg); display:none}
 #directions {margin-left:20px}
 #gooogleMap {
-    height: 850px;
+    height: 1000px;
     width: 1000px;
     position: relative;
     

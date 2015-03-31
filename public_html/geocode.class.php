@@ -27,15 +27,3 @@ class geocoder{
         }
     }
 ?>
-<?php
-//error handler function
-function customError($errno, $errstr) {
-  echo "<h5>The address is not Valid</h5>";
-}
-
-//set error handler
-set_error_handler("customError");
-
-//trigger error
-echo($test);
-?>
