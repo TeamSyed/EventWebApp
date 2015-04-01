@@ -1,6 +1,6 @@
 <?php 
  include_once './header.php';
-// error_reporting(E_ERROR | E_PARSE);
+error_reporting(E_ERROR | E_PARSE);
 if(isset($_GET['id']))
 { 
     $id = mysql_real_escape_string($_GET['id']);
@@ -22,8 +22,8 @@ if(isset($_GET['id']))
 </div>
 <div id="loadAddress">
 <form action="" method="post"><table id="adressTable">
-   <tr><td>Start Point</td> <td><input type="text" name="startAddress"/></td></tr>
-   <tr><td>Destination Point</td> <td><input type="text" name="destinationAddress" id="destinationAddress"  /></td></tr>
+  
+   <tr><td>Starting Point</td> <td><input type="text" name="destinationAddress" id="destinationAddress"  /></td></tr>
    <tr><td><input type="submit" name="submit" value="Submit"/></td></td><td><button type="button" id="cancelAddress" class="btn btn-success">Cancel</button></td></td></tr>
     
    </table> </form>
@@ -82,13 +82,14 @@ echo $loc1["lng"];
 </div>
 </div>
 <div id="direcionsText">
+<h3>Your Driving Directions Are:</h3>
 <?php
 $url = str_replace(' ','', "https://maps.googleapis.com/maps/api/directions/json?origin=".$loc1['lat'].",".$loc1['lng']."&destination=".$loc['lat'].",".$loc['lng']."&917659441427");
 
 $result = file_get_contents($url);
 $data = json_decode(utf8_encode($result), true);
 $data1 = json_decode($result);
-print($data1->routes[0]->legs[0]->distance->text); // 31.8 mi
+print('Total Distance' + $data1->routes[0]->legs[0]->distance->text); // 31.8 mi
 print($data1->routes[0]->legs[0]->steps[0]->duration->text); // 4 min
 print($data1->routes[0]->legs[0]->steps[0]->html_instructions); // Head
 foreach($data1->routes[0]->legs[0]->steps as $step) {
