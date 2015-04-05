@@ -1,6 +1,16 @@
 <?php
     include 'header.php';
-    $getEvents = "SELECT img.image_url, ev.id as event_id, ev.address, ev.title, cat.name as cat_name, ev.city, ev.province, ev.postal_code, ev.date, ev.time  FROM $tbl_events as ev LEFT JOIN $tbl_categories as cat on ev.category_id = cat.id LEFT JOIN $tbl_images as img on ev.id = img.image_id";
+ $per_page=5;
+- $tot_rec=mysql_query("select * from $tbl_events");
+- $tot_rec1= mysql_num_rows($tot_rec);
+- $tot_pages=ceil($tot_rec1/$per_page);
+-
+- $pg= (isset($_REQUEST['pg']) && $_REQUEST['pg'])? $_REQUEST['pg']:1;
+- $curPg = ($pg>=1) ? $pg : 0;
+- $start=($pg-1)*$per_page;
+- /*============================================*/
+- $getEvents = "SELECT * FROM $tbl_events limit $start,$per_page";
+    $getEvents = "SELECT img.image_url, ev.id as event_id, ev.address, ev.title, cat.name as cat_name, ev.city, ev.province, ev.postal_code, ev.date, ev.time  FROM $tbl_events as ev LEFT JOIN $tbl_categories as cat on ev.category_id = cat.id LEFT JOIN $tbl_images as img on ev.id = img.image_id limit $start,$per_page";
     $getEvents = mysql_query($getEvents);
 ?>
         <table id="view" border: 0 class="viewEvents" align="center">
@@ -41,6 +51,13 @@
                     <td><a href="map.php?id=<?php echo $data['event_id']; ?>" title="View this Event"><h2>Map</h2></a></td>
                 </tr>
                 <?php } ?>
+                 <tr>
+ <td colspan="7" style='text-align: center'>
+ <a href="?pg=<?php echo ($curPg-1); ?>"><img src="Graphics/back.png" width="50px" height="50px" style="float: left;"/></a>
+ <ul class="paging-list"> <?php for($i=1;$i<=$tot_pages;$i++){ echo "<li><a href=?pg=".$i."> ".$i."</a></li>"; } ?></ul>
+ <a href="?pg=<?php echo ($curPg+1); ?>"><img src="Graphics/next.png" width="50px" height="50px" style="float: left;"/></a>
+ </td>
+ </tr>
             </tbody>
         </table>
 
