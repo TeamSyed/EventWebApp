@@ -35,14 +35,15 @@ table#thead  { color : green; font-size: 18px; font-weight:bold}
 #top h4{ Color: red; font:200; margin: 20px}
 #direcionsText{
 width: 300px;
-height: 450px;
-max-height: 750px;
-background : grey;
+height: 400px;
+max-height:400px;
+overflow:scroll;
+
 padding: 10px;padding-left: 50px;
 position: absolute;
 margin-top: -450px;
 margin-left: 20px;
-border: 2px solid white;
+border-right: 1px solid grey;
 }
 table#addevent img {height: 150px; width : 150px; border: 1px solid black; padding: 2px;margin: 5px;}
 #search { float : right; margin-top: 50px; padding: 20px;}

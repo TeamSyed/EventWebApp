@@ -52,10 +52,16 @@ if(isset($_GET['id']))
                  <tr>
                      <td colspan="2"><a href="viewevents.php" class="btn btn-primary btn-mini col-md-12">Back to Event List</a></td>
                 </tr>
+                <tr> <td>
+    <img src="graphics/thumbsup.png"/><img src="graphics/thumbsdown.png"/>
+    </td></tr>
             </table>
         </td>
         <td><img id="displaye" src=<?php echo ucwords($data['image_url']); ?>  alt="No Image Was Selected"/></td>
+        
     </tr>
+   
+    
 </table>
-</div>?>
+</div>
    <?php include 'footer.php';?>
