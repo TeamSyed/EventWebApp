@@ -6,8 +6,10 @@
         <title></title>
     </head>
     <body>
-        <?php include 'header.php';?>
-       <?php include 'footer.php';?>
+        <?php //include 'header.php';  
+        header('location:viewevents.php');?>
+       
+       <?php //include 'footer.php';?>
     </body>
    
 </html>

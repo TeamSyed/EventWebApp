@@ -40,7 +40,7 @@
     <body>
         <br />
         <div id="wrap">
-            <form name="eventadd" method="post" enctype="multipart/form-data">
+            <form name="eventadd" method="post" enctype="multipart/form-data" onsubmit="return validateEventAdd()">
        <table id="addevent">
            <?php if(isset($message)){  ?>
            <tr><th colspan="2" style="background: <?php echo $color; ?>;"><?php echo $message; ?></th></tr
@@ -53,7 +53,7 @@
            <tr>
                <td>Address </td><td class="address">
                    <div class="street"><input id="street" type="text" name="address[]" value="<?php echo $edit_data['address'][0]; ?>" placeholder="Enter Street Number"/><br /><div class="err"></div></div>
-                   <div class="streetName"><input id="streetName" type="text" name="address[]" value="<?php echo $edit_data['address'][1]; ?>" placeholder="Enter Street Name" onblur="$(this).val($(this).val().capitalize());"/><br /><div class="err"></div>
+                   <div class="streetName"><input id="streetName" type="text" name="address[]" value="<?php echo $edit_data['address'][1]; ?>" placeholder="Enter Street Name" onblur="$(this).val($(this).val().capitalize());"/><br /><div class="err"></div></div>
                    <select name="address[]">
                       <option <?php echo (isset($Road)) ? $Road: ""; ?>>Road</option>
                       <option <?php echo (isset($Boulevard)) ? $Boulevard: ""; ?>>Boulevard</option>
@@ -110,7 +110,8 @@
            </tr>
 
            <tr>
-               <td>Pictures </td><td class="image">   <input type="file" id="image" name="image" id="image"><input type="submit" value="Upload Image" name="upload"> <br /><div class="err"></div>
+               <td>Pictures </td><td class="image">   <input type="file" id="image" name="image" id="image">
+<!--                   <input type="submit" value="Upload Image" name="upload"> <br /><div class="err"></div>-->
                     <?php
                     
 if (isset($_POST['upload'])){
