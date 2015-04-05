@@ -127,3 +127,9 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 //    Query for retrieving event information
 //    $retrieve_event = "SELECT * FROM event where id='$event_id'";   // Specific event
 //    $retrieve_event = "SELECT * FROM event";   // All Events event
+    
+    function deleteEvent($id){
+        $query = "DELETE FROM event WHERE id='$id'";
+        $exe_query = mysql_query($query) or die("Error while deleting event: ".mysql_error());
+        return $exe_query;
+    }
