@@ -16,6 +16,7 @@
     <script src="js/bootstrap-timepicker.min.js"></script>
     <script src="js/search.js"></script>
     <script src="js/validations.js"></script>
+    <script src="js/rating.js"></script>
     <script
 src="http://maps.googleapis.com/maps/api/js">
 </script>

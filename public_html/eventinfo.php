@@ -54,7 +54,21 @@ if(isset($_GET['id']))
                 </tr>
             </table>
         </td>
-        <td><img id="displaye" src=<?php echo ucwords($data['image_url']); ?>  alt="No Image Was Selected"/></td>
+        <td><img id="displaye" src=<?php echo ucwords($data['image_url']); ?>  alt="No Image Was Selected"/><br/>
+        <div class='movie_choice'>
+    Rate the Event
+    <div id="r1" class="rate_widget">
+        <div class="star_1 ratings_stars"></div>
+        <div class="star_2 ratings_stars"></div>
+        <div class="star_3 ratings_stars"></div>
+        <div class="star_4 ratings_stars"></div>
+        <div class="star_5 ratings_stars"></div>
+        <div class="total_votes">vote data</div>
+    </div>
+</div>
+
+
+</td>
     </tr>
 </table>
 </div>?>

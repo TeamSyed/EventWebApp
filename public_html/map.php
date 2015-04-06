@@ -83,19 +83,28 @@ echo $loc1["lng"];
 </div>
 <div id="direcionsText">
 <h3>Your Driving Directions Are:</h3>
+
 <?php
+if ($loc1 == ' '){
+echo 'Please Enter the Starting Address' ;
+
+exit;
+}
+else{
+
 $url = str_replace(' ','', "https://maps.googleapis.com/maps/api/directions/json?origin=".$loc1['lat'].",".$loc1['lng']."&destination=".$loc['lat'].",".$loc['lng']."&917659441427");
 
 $result = file_get_contents($url);
 $data = json_decode(utf8_encode($result), true);
 $data1 = json_decode($result);
-print('Total Distance' + $data1->routes[0]->legs[0]->distance->text); // 31.8 mi
-print($data1->routes[0]->legs[0]->steps[0]->duration->text); // 4 min
-print($data1->routes[0]->legs[0]->steps[0]->html_instructions); // Head
+print('Total Distance' + $data1->routes[0]->legs[0]->distance->text); 
+print($data1->routes[0]->legs[0]->steps[0]->duration->text); 
+print($data1->routes[0]->legs[0]->steps[0]->html_instructions); 
 foreach($data1->routes[0]->legs[0]->steps as $step) {
     print('<p>'.$step->html_instructions.'</p>');
 }
 
+}
 ?>
 </div>
 
