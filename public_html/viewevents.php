@@ -1,17 +1,17 @@
 <?php
     include 'header.php';
  $per_page=5;
-- $tot_rec=mysql_query("select * from $tbl_events");
-- $tot_rec1= mysql_num_rows($tot_rec);
-- $tot_pages=ceil($tot_rec1/$per_page);
--
-- $pg= (isset($_REQUEST['pg']) && $_REQUEST['pg'])? $_REQUEST['pg']:1;
-- $curPg = ($pg>=1) ? $pg : 0;
-- $start=($pg-1)*$per_page;
-- /*============================================*/
-- $getEvents = "SELECT * FROM $tbl_events limit $start,$per_page";
+ $tot_rec=mysql_query("select * from $tbl_events");
+ $tot_rec1= mysql_num_rows($tot_rec);
+ $tot_pages=ceil($tot_rec1/$per_page);
+
+ $pg= (isset($_REQUEST['pg']) && $_REQUEST['pg'])? $_REQUEST['pg']:1;
+ $curPg = ($pg>=1) ? $pg : 0;
+ $start=($pg-1)*$per_page;
+ /*============================================*/
+ $getEvents = "SELECT * FROM $tbl_events limit $start,$per_page";
     $getEvents = "SELECT img.image_url, ev.id as event_id, ev.address, ev.title, cat.name as cat_name, ev.city, ev.province, ev.postal_code, ev.date, ev.time  FROM $tbl_events as ev LEFT JOIN $tbl_categories as cat on ev.category_id = cat.id LEFT JOIN $tbl_images as img on ev.id = img.image_id limit $start,$per_page";
-    $getEvents = mysql_query($getEvents);
+    $getEvents = mysql_query($getEvents) or die("View Events: ".  mysql_error());
 ?>
         <table id="view" border: 0 class="viewEvents" align="center">
             <caption><h4>Upcoming Events</h4></caption>
