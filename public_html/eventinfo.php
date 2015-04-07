@@ -11,13 +11,13 @@ if(isset($_GET['id']))
 }
 
     
-    echo $getEvents = "SELECT * FROM $tbl_events as ev LEFT JOIN $tbl_categories as cat on ev.category_id = cat.id LEFT JOIN $tbl_images as img on ev.id = img.id";
+$getEvents = "SELECT * FROM $tbl_events as ev LEFT JOIN $tbl_categories as cat on ev.category_id = cat.id LEFT JOIN $tbl_images as img on ev.id = img.id";
     $getEvents = mysql_query($getEvents);
     $data = mysql_fetch_assoc($getEvents);
 ?>
 
 <div style="height: 80%; margin: 10% auto 0 auto; width: 70%">
-<table>
+    <table style="float: left">
     <tr>
         <th colspan="2"><h1>Event Information</h1></th>
     </tr>
@@ -54,7 +54,7 @@ if(isset($_GET['id']))
                 </tr>
             </table>
         </td>
-        <td><img id="displaye" src=<?php echo ucwords($data['image_url']); ?>  alt="No Image Was Selected"/><br/>
+        <td><img id="displaye" src="<?php echo $data['image_url']; ?>"  alt="No Image Was Selected"/><br/>
         <div class='movie_choice'>
     Rate the Event
     <div id="r1" class="rate_widget">
