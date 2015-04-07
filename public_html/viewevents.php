@@ -10,7 +10,7 @@
  $start=($pg-1)*$per_page;
  /*============================================*/
  $getEvents = "SELECT * FROM $tbl_events limit $start,$per_page";
-    $getEvents = "SELECT img.image_url, ev.id as event_id, ev.address, ev.title, cat.name as cat_name, ev.city, ev.province, ev.postal_code, ev.date, ev.time  FROM $tbl_events as ev LEFT JOIN $tbl_categories as cat on ev.category_id = cat.id LEFT JOIN $tbl_images as img on ev.id = img.image_id limit $start,$per_page";
+    $getEvents = "SELECT img.image_url, ev.id as event_id, ev.address, ev.title, cat.name as cat_name, ev.city, ev.province, ev.postal_code, ev.date, ev.time  FROM $tbl_events as ev LEFT JOIN $tbl_categories as cat on ev.category_id = cat.id LEFT JOIN $tbl_images as img on ev.id = img.id limit $start,$per_page";
     $getEvents = mysql_query($getEvents) or die("View Events: ".  mysql_error());
 ?>
         <table id="view" border: 0 class="viewEvents" align="center">
