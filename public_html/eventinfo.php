@@ -11,7 +11,7 @@ if(isset($_GET['id']))
 }
 
     
-$getEvents = "SELECT * FROM $tbl_events as ev LEFT JOIN $tbl_categories as cat on ev.category_id = cat.id LEFT JOIN $tbl_images as img on ev.id = img.id";
+echo $getEvents = "SELECT * FROM $tbl_events as ev LEFT JOIN $tbl_categories as cat on ev.category_id = cat.id LEFT JOIN $tbl_images as img on ev.id = img.id where ev.id = '$id'";
     $getEvents = mysql_query($getEvents);
     $data = mysql_fetch_assoc($getEvents);
 ?>
