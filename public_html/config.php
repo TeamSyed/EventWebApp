@@ -148,3 +148,38 @@ error_reporting(E_ALL ^ E_DEPRECATED);
         $exe_query = mysql_query($query) or die("Error while deleting event: ".mysql_error());
         return $exe_query;
     }
+    
+    function getFriendlist($user_id){
+        $result = array();
+        $query = "SELECT * from friends where user_id = '$user_id'";
+        $exe = mysql_query($query);
+        while($row = mysql_fetch_assoc($exe)){
+            array_push($result, $row);
+        }
+        return $result;
+    }
+    
+    function getUserMail($user_id){
+        $exe = mysql_query("SELECT * FROM users where user_id='$user_id'") or die(mysql_error());
+        $getVal = mysql_fetch_object($exe);
+        return $getVal->user_email;
+    }
+    
+/*
+    INSERT INTO `users` (`user_id`, `user_pass`, `user_email`, `user_join_date`, `level_id`, `title_id`) VALUES
+(1, 'admin123', 'testuser01@gmail.com', '2015-04-08 18:33:27', 0, 0),
+(2, 'admin123', 'testuser02@gmail.com', '2015-04-08 18:33:27', 0, 0),
+(3, 'admin123', 'testuser03@gmail.com', '2015-04-08 18:33:27', 0, 0),
+(4, 'admin123', 'testuser04@gmail.com', '2015-04-08 18:33:27', 0, 0),
+(5, 'admin123', 'testuser05@gmail.com', '2015-04-08 18:33:27', 0, 0),
+(6, 'admin123', 'testuser06@gmail.com', '2015-04-08 18:33:27', 0, 0);
+ */
+    
+    /*
+     INSERT INTO `friends` (`id`, `user_id`, `friend_id`, `active`, `approved`, `created_at`, `updated_at`) VALUES
+(1, 1, 2, 1, 1, '2015-04-08 18:35:41', '2015-04-08 18:35:41'),
+(2, 1, 3, 1, 1, '2015-04-08 18:36:06', '2015-04-08 18:36:06'),
+(3, 1, 4, 0, 0, '2015-04-08 18:36:06', '2015-04-08 18:36:06'),
+(7, 1, 5, 1, 0, '2015-04-08 18:36:06', '2015-04-08 18:36:06'),
+(8, 1, 6, 1, 1, '2015-04-08 18:36:06', '2015-04-08 18:36:06');
+     */
