@@ -9,6 +9,7 @@ error_reporting(E_ALL ^ E_DEPRECATED);
     $tbl_categories = "category";
     $tbl_event_images = "event_images";
     $tbl_images = "images";
+    $tbl_rating = "rating";
     $tbl_levels = "levels";
     $tbl_titles = "titles";
     $tbl_users = "users";
@@ -72,6 +73,16 @@ error_reporting(E_ALL ^ E_DEPRECATED);
                       ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1';
     $images_create = mysql_query($images_query);
     if(!$images_create) echo "Error while creating ".$tbl_images.": ".  mysql_error();
+    
+    // Creating ratings table
+    $ratings_query = 'CREATE TABLE IF NOT EXISTS `rating` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`p_id` varchar(10) NOT NULL,
+`rate` varchar(10) NOT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8';
+    $rating_create = mysql_query($ratings_query);
+    if(!$rating_create) echo "Error while creating ".$tbl_rating.": ".  mysql_error();
     
     // Creating levels table
     $levels_query = 'CREATE TABLE IF NOT EXISTS `'.$tbl_levels.'` (

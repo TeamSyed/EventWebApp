@@ -15,6 +15,9 @@ $getEvents = "SELECT * FROM $tbl_events as ev LEFT JOIN $tbl_categories as cat o
     $getEvents = mysql_query($getEvents);
     $data = mysql_fetch_assoc($getEvents);
 ?>
+<?php
+include('ratings.php');
+?>
 
 <div style="height: 80%; margin: 10% auto 0 auto; width: 70%">
     <table style="float: left">
