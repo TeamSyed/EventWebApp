@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 include_once '../config.php';
 $user_id = 1;   // for now, will be served by session in later stages
 $friendList = getFriendlist($user_id);
@@ -9,14 +10,17 @@ foreach($friendList as $friend){
         array_push($activeFriends, $friend);
     }
 }
+if(isset($_GET['s'])){
+    $success = "Operation Successful";
+}
 include './header.php';
 ?>
  <table id="view" border: 0 class="viewEvents" align="center">
             <caption><h4>My Friends</h4></caption>
             <thead>
-                <?php //if(isset($_GET['delsucc']) and $_GET['delsucc']=="true"){
-                  // echo "<tr><th colspan='7' style='background: green; color: #fff'>Event was Deleted Successfully</th></tr>";  
-  //              }
+                <?php if(isset($_GET['s']) ){
+                  echo "<tr><th colspan='7' style='background: green; color: #fff'>Friend was Deleted Successfully</th></tr>";  
+                }
                 ?>
                 <tr>
                     <th>S. No.</th>
@@ -30,13 +34,12 @@ include './header.php';
                     <td><?php echo $a; ?></td>
                     <td><?php echo $data['friend_email'];; ?></td>
                     <td>
-                        <a href="editevent.php?id=<?php echo $data['event_id']; ?>" title="Edit Event">Edit</a>
-                        <a href="javascript:void(0);" onclick="delConfirm(<?php echo $data['event_id']; ?>);">Delete</a>
+                        <a href="javascript:void(0);" onclick="delFriend(<?php echo $data['id']; ?>);">Delete</a>
                     </td>
             <script type="text/javascript">
-                function delConfirm(delId){
-                    var conf = confirm("Are you sure ?\n This action cannot be undone");
-                    if(conf) window.location.href = "DelConfirm.php?delid="+delId;
+                function delFriend(delId){
+                    var conf = confirm("Are you sure ?");
+                    if(conf) window.location.href = "delfriend.php?delid="+delId;
                 }
             </script>
                 </tr>

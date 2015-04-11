@@ -176,6 +176,16 @@ PRIMARY KEY (`id`)
         return $getVal->user_email;
     }
     
+    function deleteFriend($delid){
+        $exe = mysql_query("Update friends set active = 0 where id='$delid'") or die(mysql_error());
+        return $exe;
+    }
+    
+    function getLastInsertId($tblname){
+        $exe = mysql_query("SELECT max(id) as maxId from $tblname");
+        $ob = mysql_fetch_object($exe);
+        return $ob->maxId;
+    }
 /*
     INSERT INTO `users` (`user_id`, `user_pass`, `user_email`, `user_join_date`, `level_id`, `title_id`) VALUES
 (1, 'admin123', 'testuser01@gmail.com', '2015-04-08 18:33:27', 0, 0),

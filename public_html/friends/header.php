@@ -33,12 +33,7 @@ src="http://maps.googleapis.com/maps/api/js">
     <script src="../styleeditor/prettify.js"></script>
     <link href="../styleeditor/index.css" rel="stylesheet"/>
     <script src="../styleeditor/bootstrap-wysiwyg.js"></script>
-    
-    
-<?php 
-    include_once('config.php');
-?>
-  
+
 
     <title>Rohit's WebSite</title>
 </head>
@@ -81,11 +76,11 @@ src="http://maps.googleapis.com/maps/api/js">
             </div>
             <div id="menu">
                     <ul>
-                        <li id="home"><a href="viewevents.php">Home</a></li>
-                        <li id="event"><a href="newevent.php">Add an event</a></li>
-                        <li id="Contact"><a href="#/about">About Us</a></li>
-                        
-                        <li id="businessevent"><a href="businessevent.php"> Business Event</a></li>
+                        <li id="home"><a href="../viewevents.php">Home</a></li>
+                        <li id="event"><a href="../newevent.php">Add an event</a></li>
+                        <li id="Contact"><a href="../#/about">About Us</a></li>
+                        <li id="friend"><a href="index.php">Friends</a></li>
+                        <li id="businessevent"><a href="../businessevent.php"> Business Event</a></li>
                         
                         
                     </ul>

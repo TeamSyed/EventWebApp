@@ -11,12 +11,12 @@ if(isset($_GET['id']))
 }
 
     
-$getEvents = "SELECT * FROM $tbl_events as ev LEFT JOIN $tbl_categories as cat on ev.category_id = cat.id LEFT JOIN $tbl_images as img on ev.id = img.id where ev.id = '$id'";
+$getEvents = "SELECT * FROM $tbl_events as ev LEFT JOIN $tbl_categories as cat on ev.category_id = cat.id LEFT JOIN $tbl_images as img on img.id = (SELECT picture_id from event_images where event_id = ev.id) where ev.id = '$id'";
     $getEvents = mysql_query($getEvents);
     $data = mysql_fetch_assoc($getEvents);
 ?>
 <?php
-include('ratings.php');
+include_once('ratings.php');
 ?>
 
 <div style="height: 80%; margin: 10% auto 0 auto; width: 70%">

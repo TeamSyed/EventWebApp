@@ -125,6 +125,11 @@ if (isset($_POST['submit'])){
     
     $sql = "INSERT INTO images (image_name,image_url,image_type) VALUES ('$image_name','$filepath','$image_type')";
 	$result = mysql_query($sql);
+        
+        $image_id = getLastInsertId("images");
+        $event_id = getLastInsertId("event");
+        $sql_image = "INSERT INTO event_images(event_id, picture_id) values('$event_id', '$image_id')";
+	$result_image = mysql_query($sql_image);
 }
 
 ?></td>
